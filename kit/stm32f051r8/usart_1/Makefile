@@ -22,6 +22,8 @@ CC_OPT			:= -march=armv6-m -mcpu=cortex-m0 -c -O0 -g -mthumb -I$(INC_DIR)
 ASM_OPT			:= -march=armv6-m -mcpu=cortex-m0 -c -mthumb
 LD_OPT			:= -T $(LINKER_FILE) -Map $(OUTPUT_PATH)/$(PROJ_NAME).map $(FILE_TO_LINK)
 
+all: clean build
+
 $(OUTPUT_PATH)/clock.o: $(SRC_DIR)/clock.c
 	@echo "compile $(SRC_DIR)/clock.c file"
 	$(CC) $(CC_OPT) $(SRC_DIR)/clock.c -o $(OUTPUT_PATH)/clock.o

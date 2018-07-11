@@ -1,0 +1,130 @@
+Duaj:
+
+https://www.youtube.com/watch?v=ZZuD6iUe3Pc
+
+Xem xong clip thấy nó làm đc hay và thấy đây là bài toán cơ bản trong lập trình về C và MCU: Interrupt + Timer + Uart.
+
+Yêu cầu như sau:
+- Hoàn thành 8 thuật toán sắp xếp có trong clip.
+- Tính toán thời gian thực thi của mỗi thuật toán (thời gian tính từ lúc bắt đầu sắp xếp đến lúc hoàn thành sắp xếp chuối). Sử dụng timer để đo đạc thời gian thức thi.
+- Gửi kết quả đo được lên máy tính thông qua giao tiếp uart. Phần mêm chạy trên máy tính sử dụng RealTerm app để nhận dữ liệu và hiển thị kết quả.
+- Không đc dùng thư viện HAL (hardware abstraction layer). Tức là tự viết toàn bộ thư viện cho mình để truy cập mcu.
+
+Cách thức gửi bài đã hoàn thành:
+- Upload code lên github và gửi lại link
+- Gửi link lại bên dưới bài viết này
+
+Cách thức đánh giá:
+- Thời gian hoàn thành dựa vào commit cuối cùng trên github
+- Chạy lần lượt từng thuật toán sắp xếp và tính toán thời gian thực thi thuật toán
+- Sẽ có hỏi và giải thích về bài làm
+
+Tiêu chí đánh giá:
+- Hoàn thành nhiều nhất những thuật toán sắp xếp như trong clip
+- Thời gian chạy thuật toán ngắn nhất
+- Trả lời được những phần đã làm
+
+Hạn cuối nạp bài: hết ngày 7/7/2018
+
+Bộ data mẫu sử dụng để test gồm một mảng 100 số nguyên như dưới:
+
+1
+26
+28
+82
+6
+44
+30
+53
+50
+99
+91
+63
+40
+74
+36
+92
+50
+69
+36
+82
+68
+99
+74
+16
+73
+15
+80
+5
+54
+79
+51
+30
+84
+50
+86
+81
+18
+3
+60
+99
+41
+25
+93
+93
+1
+36
+52
+57
+91
+63
+69
+42
+53
+43
+87
+16
+69
+33
+82
+16
+31
+23
+66
+29
+5
+38
+17
+51
+86
+39
+71
+19
+32
+36
+28
+13
+52
+98
+65
+55
+29
+32
+44
+59
+13
+77
+94
+84
+31
+94
+22
+61
+3
+83
+48
+32
+24
+35
+59
+69
