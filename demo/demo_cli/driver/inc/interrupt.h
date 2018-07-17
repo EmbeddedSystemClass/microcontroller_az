@@ -2,7 +2,7 @@
 #ifndef __INTERRUPT_H__
 #define __INTERRUPT_H__
 
-#include "hw_stm32f051r8.h"
+#include "hw_platform.h"
 
 /* global variable */
 extern volatile unsigned char rx_data;

@@ -1,65 +1,210 @@
+/*
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2018 Anh Vo Tuan <votuananhs@gmail.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ * and associated documentation files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ * sublicense, and/or sell copies of the Software, and to permit persons to whom the Software
+ * is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies
+ * or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ * BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+ * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ */
 
-#include "project.h"
+#include "type.h"
+#include "hw_platform.h"
+#include "driver.h"
+#include "gpio.h"
 
-void pin_init(void)
+/*===============================================================================================*/
+/*===================== Global variable =========================================================*/
+/*===============================================================================================*/
+
+/*===============================================================================================*/
+/*===================== Private function ========================================================*/
+/*===============================================================================================*/
+
+/*===============================================================================================*/
+/*===================== Global function =========================================================*/
+/*===============================================================================================*/
+
+/*************************************************************************************************/
+/* Function     :   set_mode_pin
+ * Brief        :   The function is called to setup mode of pin
+ * Parameter    :
+ *                  [IN] port : port number which will be set up
+ *                  [IN] pin : pin number which will be set up
+ *                  [IN] mode_option : contain setting options include
+ *                                  - mode
+ *                                  - alternate mode
+ *                                  - direction
+ *                                  - pull up/down
+ * Return       :   None
+/*************************************************************************************************/
+status_driver_t set_mode_pin(u8_t port, u8_t pin, u32_t mode_option)
 {
-    unsigned int tempreg;
+    u32_t temp;
+    u32_t temp_reg;
 
-    /* set mode led ld3 */
-    tempreg = read_reg(GPIO_MODER(PORT_C), ~(0x03 << 18));
-    tempreg |= (GPIO_MODER_OUTPUT << 18);
-    write_reg(GPIO_MODER(PORT_C), tempreg);
+    /* mode */
+    temp = mode_option & 0x03;
+    temp_reg = read_reg(GPIO_MODER(port), ~(0x03 << (pin*2)));
+    if(GPIO_MODE_OPTION_ANALOG == temp)
+    {
+        temp_reg |= GPIO_MODE_OPTION_ANALOG << (pin*2);
+        write_reg(GPIO_MODER(port), temp_reg);
+    }
+    else if (GPIO_MODE_OPTION_ALT == temp)
+    {
+        temp_reg |= GPIO_MODE_OPTION_ALT << (pin*2);
+        write_reg(GPIO_MODER(port), temp_reg);
+    }
+    else if (GPIO_MODE_OPTION_OUTPUT == temp)
+    {
+        temp_reg |= GPIO_MODE_OPTION_OUTPUT << (pin*2);
+        write_reg(GPIO_MODER(port), temp_reg);
+    }
+    else if (GPIO_MODE_OPTION_INPUT == temp)
+    {
+        temp_reg |= GPIO_MODE_OPTION_INPUT << (pin*2);
+        write_reg(GPIO_MODER(port), temp_reg);
+    }
 
+    /* pull-up/down */
+    temp = mode_option & 0x0C;
+    temp_reg = read_reg(GPIO_PUPDR(port), ~(0x03 << (pin*2)));
+    if(GPIO_MODE_OPTION_PULLUP == temp)
+    {
+        temp_reg |= 0x01 << (pin*2);
+        write_reg(GPIO_PUPDR(port), temp_reg);
+    }
+    else if (GPIO_MODE_OPTION_PULLDOWN == temp)
+    {
+        temp_reg |= 0x02 << (pin*2);
+        write_reg(GPIO_PUPDR(port), temp_reg);
+    }
 
-    /* set mode led ld4 */
-    tempreg = read_reg(GPIO_MODER(PORT_C), ~(0x03 << 16));
-    tempreg |= (GPIO_MODER_OUTPUT << 16);
-    write_reg(GPIO_MODER(PORT_C), tempreg);
+    /* alt mode */
+    temp = (mode_option & (0x0F << 4)) >> 4;
+    if (pin > 7)
+    {
+        temp_reg = read_reg(GPIO_AFRH(port), ~(0x0F << (pin*4)));
+        temp_reg |= temp << (pin*4);
+        write_reg(GPIO_AFRH(port), temp_reg);
+    }
+    else
+    {
+        temp_reg = read_reg(GPIO_AFRL(port), ~(0x0F << (pin*4)));
+        temp_reg |= temp << (pin*4);
+        write_reg(GPIO_AFRL(port), temp_reg);
+    }
 
-
-    /* set mode user button */
-    tempreg = read_reg(GPIO_MODER(PORT_A), ~(0x03 << 0));
-    tempreg |= (GPIO_MODER_INPUT << 0);
-    write_reg(GPIO_MODER(PORT_A), tempreg);
-
-
-    /* set mode PA2 */
-    tempreg = read_reg(GPIO_MODER(PORT_A), ~(0x03 << 4));
-    tempreg |= (GPIO_MODER_INPUT << 4);
-    write_reg(GPIO_MODER(PORT_A), tempreg);
-    /* pull up */
-    tempreg = read_reg(GPIO_PUPDR(PORT_A), ~(0x03 << 4));
-    tempreg |= (0x01 << 4);
-    write_reg(GPIO_PUPDR(PORT_A), tempreg);
-
-
-    /* PA10 - Rx */
-    tempreg = read_reg(GPIO_MODER(PORT_A), ~(0x03 << 20));
-    tempreg |= (GPIO_MODER_ALT << 20);
-    write_reg(GPIO_MODER(PORT_A), tempreg);
-
-    tempreg = read_reg(GPIO_AFRH(PORT_A), ~(0xF << 8));
-    tempreg |= (AF1 << 8);
-    write_reg(GPIO_AFRH(PORT_A), tempreg);
-
-
-    /* PA9 - Tx */
-    tempreg = read_reg(GPIO_MODER(PORT_A), ~(0x03 << 18));
-    tempreg |= (GPIO_MODER_ALT << 18);
-    write_reg(GPIO_MODER(PORT_A), tempreg);
-
-    tempreg = read_reg(GPIO_AFRH(PORT_A), ~(0xF << 4));
-    tempreg |= (AF1 << 4);
-    write_reg(GPIO_AFRH(PORT_A), tempreg);
 }
 
-void led_on(unsigned char pin_number)
+/*************************************************************************************************/
+/* Function     :   write_pin
+ * Brief        :   The function is called to write new data to a pin
+ * Parameter    :
+ *                  [IN] port : port number which will be set up
+ *                  [IN] pin : pin number which will be set up
+ *                  [IN] value : 0 - low loggic; 1 - high loggic
+ * Return       :   None
+/*************************************************************************************************/
+status_driver_t write_pin(u8_t port, u8_t pin, u8_t value)
 {
-    write_reg(GPIO_BSRR(PORT_C), 1u << pin_number);
+    status_driver_t temp = STATUS_OK;
+
+    if(LOW == value)
+    {
+        write_reg(GPIO_BSRR(port), 1 << (pin + 16));
+    }
+    else if (HIGH == value)
+    {
+        write_reg(GPIO_BSRR(port), 1 << pin);
+    }
+    else
+    {
+        /* Error input parameter */
+        temp = STATUS_WRONG_INPUT;
+    }
+
+    return temp;
 }
 
-void led_off(unsigned char pin_number)
+/*************************************************************************************************/
+/* Function     :   read_pin
+ * Brief        :   The function is called to read data of a pin
+ * Parameter    :
+ *                  [IN] port : port number which will be set up
+ *                  [IN] pin : pin number which will be set up
+ * Return       :   0 - low loggic; 1 - high loggic
+/*************************************************************************************************/
+u8_t read_pin(u8_t port, u8_t pin)
 {
-    write_reg(GPIO_BSRR(PORT_C), 1u << (pin_number + 16u));
+    u32_t temp;
+
+    temp = read_reg(GPIO_IDR(port), 1 << pin);
+    temp = temp >> pin;
+
+    return (u8_t)temp;
 }
+
+/*************************************************************************************************/
+/* Function     :   toggle_pin
+ * Brief        :   The function is called to inverse value of a pin
+ * Parameter    :
+ *                  [IN] port : port number which will be set up
+ *                  [IN] pin : pin number which will be set up
+ * Return       :   Return value which is set to pin
+/*************************************************************************************************/
+u8_t toggle_pin(u8_t port, u8_t pin)
+{
+    u32_t temp;
+
+    temp = read_reg(GPIO_ODR(port), 1 << pin);
+    temp = temp >> pin;
+
+    if (LOW == temp)
+    {
+        write_reg(GPIO_BSRR(port), 1 << pin);
+    }
+    else
+    {
+        write_reg(GPIO_BSRR(port), 1 << (pin + 16));
+    }
+
+    return temp;
+}
+
+/*************************************************************************************************/
+/* Function     :   init_pin
+ * Brief        :   The function is called to initialize all pins in program
+ * Parameter    :   None
+ * Return       :   None
+/*************************************************************************************************/
+status_driver_t init_pin(const gpio_pin_t *list_pins, const u8_t num_pin)
+{
+    u8_t i;
+    status_driver_t temp = STATUS_OK;
+
+    for(i = 0; i < num_pin; i++)
+    {
+        set_mode_pin(list_pins->port, list_pins->pin, list_pins->mode_option);
+    }
+
+    return temp;
+}
+
+
+
+
 

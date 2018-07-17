@@ -8,8 +8,8 @@ INC_DIR		:= $(PRO_DIR)/inc
 SRC_DIR 	:= $(PRO_DIR)/src
 LINKER_FILE	:= $(PRO_DIR)/linker/stm32f0_discovery.ld
 
-#COMPILER_DIR 	:= C:/tools/gcc_7_2017-q4-major
-COMPILER_DIR 	:= /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update
+COMPILER_DIR 	:= C:/tools/7_2018-q2-update
+# COMPILER_DIR 	:= /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update
 
 PREFIX_GCC_COMPILER	:= arm-none-eabi
 CC				:= $(COMPILER_DIR)/bin/$(PREFIX_GCC_COMPILER)-gcc

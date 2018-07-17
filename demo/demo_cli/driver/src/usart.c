@@ -54,7 +54,7 @@ char usart_send_byte(unsigned char data_input)
 {
     unsigned int temp_reg;
     char state = 0;
-    
+
     /* kiểm tra xem TDR sẵn sàng nhận dữ liệu mới chưa */
     temp_reg = read_reg(USART_ISR, (1<<7));
     if (0 != temp_reg)
@@ -69,7 +69,7 @@ char usart_send_byte(unsigned char data_input)
 }
 
 char usart_send_string(unsigned char *str_data)
-{    
+{
     char state = 0;
     while(*str_data)
     {

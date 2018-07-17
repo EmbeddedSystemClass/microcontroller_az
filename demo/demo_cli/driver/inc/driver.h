@@ -20,22 +20,19 @@
  *
  */
 
-#ifndef __TYPE_H__
-#define __TYPE_H__
+#ifndef __DRIVER_H__
+#define __DRIVER_H__
 
-typedef unsigned int            u32_t;
-typedef signed int              s32_t;
+/* definition logic input/output */
+#define LOW         0u
+#define HIGH        1u
 
-typedef unsigned short          u16_t;
-typedef signed short            s16_t;
-
-typedef unsigned char           u8_t;
-typedef signed char             s8_t;
-
-#ifndef NULL
-#define NULL   ((void *) 0)
-#endif
-
+/* status */
+typedef enum {
+    STATUS_OK = 0,
+    STATUS_ERROR,
+    STATUS_WRONG_INPUT,
+} status_driver_t;
 
 /* end file */
-#endif /* __TYPE_H__ */
+#endif /* __DRIVER_H__ */

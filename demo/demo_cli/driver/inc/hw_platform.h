@@ -1,6 +1,31 @@
+/*
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2018 Anh Vo Tuan <votuananhs@gmail.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ * and associated documentation files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ * sublicense, and/or sell copies of the Software, and to permit persons to whom the Software
+ * is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies
+ * or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ * BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+ * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ */
 
-#ifndef __HW_STM32F051R8_H__
-#define __HW_STM32F051R8_H__
+/*
+ * MCU:     STM32F051R8
+ */
+
+#ifndef __HW_PLATFORM_H__
+#define __HW_PLATFORM_H__
 
 
 #define write_reg(addr, value)      *((unsigned long int *)(addr)) = value
@@ -56,6 +81,8 @@
 #define APB1_HCLK_4             5u
 #define APB1_HCLK_8             6u
 #define APB1_HCLK_16            7u
+
+
 /* =================== GPIO =================== */
 #define BASE_ADDR_GPIO          0x48000000u
 #define GPIO_MODER(port)        (BASE_ADDR_GPIO + (0x400u * (port)) + 0x00u)
@@ -93,12 +120,6 @@
 #define AF6                     0x6
 #define AF7                     0x7
 
-/* Led LD3 - PC9 */
-#define LD3_PIN                 9
-#define LD4_PIN                 8
-
-/* user button (B1) - PA0 */
-#define USER_BUTTON             0
 
 /* =================== EXTI =================== */
 #define BASE_ADDR_EXTI          0x40010400u
@@ -106,17 +127,19 @@
 #define EXTI_RTSR               (BASE_ADDR_EXTI + 0x08u)
 #define EXTI_PR                 (BASE_ADDR_EXTI + 0x14u)
 
+
 /* =================== SYSCFG =================== */
 #define BASE_ADDR_SYSCFG        0x40010000u
 #define SYSCFG_EXTICR1          (BASE_ADDR_SYSCFG + 0x08u)
+
 
 /* =================== NVIC =================== */
 #define NVIC_ISER               0xE000E100u
 #define NVIC_ICER               0xE000E180u
 #define NVIC_ISPR               0xE000E200u
 #define NVIC_ICPR               0xE000E280u
-#define NVIC_PRI1               0xE000E404u
-#define NVIC_PRI7               0xE000E418u
+#define NVIC_PRI(n)             (0xE000E404u + (n)) /* This register will be accessed as a byte */
+
 
 /* =================== USART =================== */
 #define BASE_ADDR_USART1        0x40013800u
@@ -131,16 +154,18 @@
 #define USART_RDR               (BASE_ADDR_USART1 + 0x24)
 #define USART_TDR               (BASE_ADDR_USART1 + 0x28)
 
+
 /* =================== System Timer - Systick =================== */
 #define SYST_CSR                0xE000E010u
 #define SYST_RVR                0xE000E014u
 #define SYST_CVR                0xE000E018u
 #define SYST_CALIB              0xE000E01Cu
 
+
 /* =================== System Controller Block - SCB =================== */
 #define SHPR2                   0xE000ED1Cu
 #define SHPR3                   0xE000ED20u
 
 /* end file */
-#endif /* __HW_STM32F051R8_H__ */
+#endif /* __HW_PLATFORM_H__ */
 

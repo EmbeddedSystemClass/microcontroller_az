@@ -2,13 +2,13 @@ System timer (Systick)
 
 A. Danh sánh những module liên quan:
 - Clock (RCC):
-	-> Tính toán giá trị clock chính xác cấp cho System Timer (Systick)
+    -> Tính toán giá trị clock chính xác cấp cho System Timer (Systick)
 - System Timer:
-	-> khởi tạo module.
-	-> viết hàm start/get_state
+    -> khởi tạo module.
+    -> viết hàm start/get_state
 - NVIC:
-	-> khởi tạo và cho phép ngắt của Systick
-	-> interrupt handler
+    -> khởi tạo và cho phép ngắt của Systick
+    -> interrupt handler
 
 B. System Timer:
 1. Khởi tạo:

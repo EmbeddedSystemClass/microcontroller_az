@@ -62,12 +62,12 @@ void EXTI0_1_IRQHandler(void)
     {
         if(0 == led_state)
         {
-            led_on(LD3_PIN);
+            led_on(LD3);
             led_state = 1;
         }
         else
         {
-            led_off(LD3_PIN);
+            led_off(LD3);
             led_state = 0;
         }
     }
@@ -89,7 +89,7 @@ void EXTI2_3_IRQHandler(void)
 void USART1_IRQHandler(void)
 {
     volatile unsigned int temp;
-    
+
     temp = read_reg(USART_ISR, 1 << 6);
     if (0 != temp) /* Tx - TC flag */
     {
@@ -130,14 +130,12 @@ void interrupt_init(void)
     write_reg(SYSCFG_EXTICR1, tempreg);
     /* NVIC */
     /* user button */
-    tempreg = read_reg(NVIC_PRI1, ~(0xFF << 8));
-    tempreg |= 0x01 << 14;
-    write_reg(NVIC_PRI1, tempreg);
+    tempreg |= 0x01 << 6;
+    write_1_byte(NVIC_PRI(5), tempreg);
 
     /* PA2 - EXTI2 */
-    tempreg = read_reg(NVIC_PRI1, ~(0xFF << 16));
-    tempreg |= 0x02 << 22;
-    write_reg(NVIC_PRI1, tempreg);
+    tempreg |= 0x02 << 6;
+    write_1_byte(NVIC_PRI(6), tempreg);
 
     /* user button */
     tempreg = read_reg(NVIC_ISER, ~(1 << 5));
@@ -148,7 +146,7 @@ void interrupt_init(void)
     tempreg = read_reg(NVIC_ISER, ~(1 << 6));
     tempreg |= 1 << 6;
     write_reg(NVIC_ISER, tempreg);
-    
+
     /* usart1 */
     write_reg(USART_ICR, 0xFFFFFFFF);
     write_reg(USART_RQR, 0xFFFFFFFF);
@@ -162,17 +160,16 @@ void interrupt_init(void)
     tempreg = read_reg(USART_CR1, ~(1 << 5));
     tempreg |= 1 << 5;
     write_reg(USART_CR1, tempreg);
-    
-    
+
+
     tempreg = read_reg(NVIC_ISER, ~(1 << 27));
     tempreg |= 1 << 27;
     write_reg(NVIC_ISER, tempreg);
 
-    tempreg = read_reg(NVIC_PRI7, ~(0xFF << 24));
-    tempreg |= 0x01 << 30;
-    write_reg(NVIC_PRI7, tempreg);
-    
-    
+    tempreg |= 0x01 << 6;
+    write_1_byte(NVIC_PRI(31), tempreg);
+
+
     /* enable global interrupt */
     asm("cpsie i");
 }

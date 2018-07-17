@@ -26,43 +26,43 @@ void system_init(u32_t hsi_prediv, u32_t pullmux, u32_t pllsrc, u32_t ahb_div, u
     /* Disable the Internal High Speed oscillator (HSI). */
     temp_reg = read_reg(RCC_CR, ~0x00000001U);
     write_reg(RCC_CR, temp_reg);
-    
+
     /* Wait till HSI is disabled */
     timeout = 0xFFF;
     do {
         temp_reg = read_reg(RCC_CR, 0x00000002U);
         timeout--;
     } while ((0 != temp_reg) && (timeout > 0));
-    
+
     /* Disable the main PLL. */
     temp_reg = read_reg(RCC_CR, ~(1 << 24));
     write_reg(RCC_CR, temp_reg);
-    
+
     /* Wait till PLL is disabled */
     timeout = 0xFFFFFFFF;
     do {
         temp_reg = read_reg(RCC_CR, (1 << 25));
         timeout--;
     } while ((0 != temp_reg) && (timeout > 0));
-    
+
     /* Configure the main PLL clock source, predivider and multiplication factor. */
     temp_reg = read_reg(RCC_CFGR2, ~0xFFFFFFF0U);
     temp_reg |= hsi_prediv;
     write_reg(RCC_CFGR2, temp_reg);
-    
+
     temp_reg = read_reg(RCC_CFGR, ~(0xF << 18));
     temp_reg |= pullmux << 18;
     write_reg(RCC_CFGR, temp_reg);
-    
+
     temp_reg = read_reg(RCC_CFGR, ~(0x3 << 15));
     temp_reg |= pllsrc << 15;
     write_reg(RCC_CFGR, temp_reg);
-    
+
     /* Enable the main PLL. */
     temp_reg = read_reg(RCC_CR, ~(1 << 24));
     temp_reg |= 1 << 24;
     write_reg(RCC_CR, temp_reg);
-    
+
     /* Wait till PLL is ready */
     timeout = 0xFFFFFFFF;
     do {
@@ -80,7 +80,7 @@ void system_init(u32_t hsi_prediv, u32_t pullmux, u32_t pllsrc, u32_t ahb_div, u
     temp_reg = read_reg(RCC_CFGR, ~(0x3 << 0));
     temp_reg |= system_source << 0;
     write_reg(RCC_CFGR, temp_reg);
-    
+
     /* Wait till System clock switch is ready */
     timeout = 0xFFFFFFFF;
     do {
@@ -92,7 +92,7 @@ void system_init(u32_t hsi_prediv, u32_t pullmux, u32_t pllsrc, u32_t ahb_div, u
     temp_reg = read_reg(RCC_CFGR, ~(0x7 << 8));
     temp_reg |= apb1_div << 8;
     write_reg(RCC_CFGR, temp_reg);
-    
+
     /* USART1 */
     temp_reg = read_reg(RCC_CFGR3, ~(0x3 << 0));
     temp_reg |= 0 << 0; /* PCLK1 */

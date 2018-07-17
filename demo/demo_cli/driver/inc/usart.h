@@ -2,7 +2,7 @@
 #ifndef __USART_H__
 #define __USART_H__
 
-#include "hw_stm32f051r8.h"
+#include "hw_platform.h"
 
 extern void usart_init(void);
 extern char usart_send_byte(unsigned char data_input);
