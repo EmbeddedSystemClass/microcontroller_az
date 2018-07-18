@@ -8,8 +8,7 @@ INC_DIR		:= $(PRO_DIR)/driver/inc
 SRC_DIR 	:= $(PRO_DIR)/driver/src
 LINKER_FILE	:= $(PRO_DIR)/linker/stm32f0.ld
 
-# COMPILER_DIR 	?= C:/tools/7_2018-q2-update
-COMPILER_DIR 	:= /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update
+COMPILER_DIR 	:= $(GCC_COMPILER)
 
 PREFIX_GCC_COMPILER	:= arm-none-eabi
 CC				:= $(COMPILER_DIR)/bin/$(PREFIX_GCC_COMPILER)-gcc

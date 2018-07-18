@@ -10,7 +10,7 @@
 
 /*************************************************************************************************/
 #define NUM_LIST_PINS       4
-const gpio_pin_t list_pins[NUM_LIST_PINS] =
+const gpio_pin_t init_list_pins[NUM_LIST_PINS] =
 {
     /* led 3 - PC9 */
     {
@@ -125,11 +125,18 @@ void main(void)
 
     system_init(PREDIV_1, PLL_MUL_12, PLL_SCR_HSI, PREDIV_1, SYSCLKSOURCE_PLLCLK, APB1_HCLK_1);
     enabled_clock();
-    init_pin(list_pins, NUM_LIST_PINS);
+    init_pin(init_list_pins, NUM_LIST_PINS);
     usart_init();
     systick_init();
 
     interrupt_init();
+    
+    led_on(LD3);
+    delay_ms_systick(200);
+    led_off(LD3);
+    delay_ms_systick(200);
+
+    usart_send_string("---> Command Line Interface - CLI <---");
 
     init_cli();
 

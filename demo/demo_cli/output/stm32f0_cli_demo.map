@@ -1,341 +1,340 @@
 Archive member included to satisfy reference by file (symbol)
 
-/Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-malloc.o)
+C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-malloc.o)
                               ./output/cli.o (malloc)
-/Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mallocr.o)
-                              /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-malloc.o) (_malloc_r)
-/Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mlock.o)
-                              /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mallocr.o) (__malloc_lock)
-/Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-sbrkr.o)
-                              /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mallocr.o) (_sbrk_r)
-/Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strcmp.o)
+C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mallocr.o)
+                              C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-malloc.o) (_malloc_r)
+C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mlock.o)
+                              C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mallocr.o) (__malloc_lock)
+C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-sbrkr.o)
+                              C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mallocr.o) (_sbrk_r)
+C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strcmp.o)
                               ./output/main.o (strcmp)
-/Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strtok.o)
+C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strtok.o)
                               ./output/cli.o (strtok)
-/Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strtok_r.o)
-                              /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strtok.o) (__strtok_r)
-/Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-freer.o)
-                              /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-malloc.o) (_free_r)
-/Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-impure.o)
-                              /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-malloc.o) (_impure_ptr)
-/Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
-                              /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mlock.o) (__retarget_lock_acquire_recursive)
-/Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-reent.o)
-                              /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-sbrkr.o) (errno)
-/Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libnosys.a(sbrk.o)
-                              /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-sbrkr.o) (_sbrk)
+C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strtok_r.o)
+                              C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strtok.o) (__strtok_r)
+C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-freer.o)
+                              C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-malloc.o) (_free_r)
+C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-impure.o)
+                              C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-malloc.o) (_impure_ptr)
+C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+                              C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mlock.o) (__retarget_lock_acquire_recursive)
+C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-reent.o)
+                              C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-sbrkr.o) (errno)
+C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libnosys.a(sbrk.o)
+                              C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-sbrkr.o) (_sbrk)
 
 Allocating common symbols
 Common symbol       size              file
 
 __lock___atexit_recursive_mutex
-                    0x1               /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
+                    0x1               C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
 __lock___arc4random_mutex
-                    0x1               /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
-errno               0x4               /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-reent.o)
+                    0x1               C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+errno               0x4               C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-reent.o)
 __lock___env_recursive_mutex
-                    0x1               /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
+                    0x1               C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
 __lock___sinit_recursive_mutex
-                    0x1               /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
+                    0x1               C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
 __lock___malloc_recursive_mutex
-                    0x1               /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
+                    0x1               C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
 __lock___at_quick_exit_mutex
-                    0x1               /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
+                    0x1               C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
 __lock___dd_hash_mutex
-                    0x1               /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
-__lock___tz_mutex   0x1               /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
+                    0x1               C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+__lock___tz_mutex   0x1               C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
 __lock___sfp_recursive_mutex
-                    0x1               /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
+                    0x1               C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
 
 Memory Configuration
 
 Name             Origin             Length             Attributes
-FLASH            0x0000000008000000 0x0000000000008000 xr
-RAM              0x0000000020000000 0x0000000000001000 xrw
-*default*        0x0000000000000000 0xffffffffffffffff
+FLASH            0x08000000         0x00008000         xr
+RAM              0x20000000         0x00001000         xrw
+*default*        0x00000000         0xffffffff
 
 Linker script and memory map
 
 
-.text           0x0000000008000000     0x1ad8
+.text           0x08000000     0x1b3c
  *(.vectors)
- .vectors       0x0000000008000000       0xc0 ./output/startup_ARMCM0.o
-                0x0000000008000000                __Vectors
-                0x00000000080000c0                __Vectors_End = .
-                0x00000000000000c0                __Vectors_Size = (__Vectors_End - __Vectors)
-                0x00000000080000c0                __end__ = .
+ .vectors       0x08000000       0xc0 ./output/startup_ARMCM0.o
+                0x08000000                __Vectors
+                0x080000c0                __Vectors_End = .
+                0x000000c0                __Vectors_Size = (__Vectors_End - __Vectors)
+                0x080000c0                __end__ = .
  *(.text*)
- .text          0x00000000080000c0      0x220 ./output/clock.o
-                0x00000000080000c0                system_init
-                0x0000000008000270                enabled_clock
- .text          0x00000000080002e0      0x3ce ./output/gpio.o
-                0x00000000080002e0                set_mode_pin
-                0x00000000080004fc                write_pin
-                0x0000000008000582                read_pin
-                0x00000000080005cc                toggle_pin
-                0x0000000008000654                init_pin
- *fill*         0x00000000080006ae        0x2 
- .text          0x00000000080006b0      0x268 ./output/interrupt.o
-                0x00000000080006b0                Reserved_IRQHandler
-                0x00000000080006b6                NMI_Handler
-                0x00000000080006bc                HardFault_Handler
-                0x00000000080006c2                SVC_Handler
-                0x00000000080006c8                PendSV_Handler
-                0x00000000080006ce                SysTick_Handler
-                0x00000000080006d4                EXTI0_1_IRQHandler
-                0x0000000008000730                EXTI2_3_IRQHandler
-                0x0000000008000758                USART1_IRQHandler
-                0x00000000080007b0                interrupt_init
- .text          0x0000000008000918      0x1d8 ./output/main.o
-                0x0000000008000918                delay
-                0x0000000008000958                led_on
-                0x0000000008000992                led_off
-                0x00000000080009cc                led_func
-                0x0000000008000a30                main
- .text          0x0000000008000af0        0x4 ./output/startup_ARMCM0.o
-                0x0000000008000af0                Reset_Handler
- .text          0x0000000008000af4      0x118 ./output/systick.o
-                0x0000000008000af4                systick_init
-                0x0000000008000b30                start_systick
-                0x0000000008000b70                get_state_systick
-                0x0000000008000b98                delay_ms_systick
-                0x0000000008000bcc                start_systick_test
- .text          0x0000000008000c0c      0x148 ./output/usart.o
-                0x0000000008000c0c                usart_init
-                0x0000000008000ccc                usart_send_byte
-                0x0000000008000d18                usart_send_string
- .text          0x0000000008000d54      0x248 ./output/cli.o
-                0x0000000008000d54                help
-                0x0000000008000df0                init_cli
-                0x0000000008000e58                add_cli
-                0x0000000008000e88                parse_cli
- .text          0x0000000008000f9c        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-malloc.o)
- .text.malloc   0x0000000008000f9c       0x14 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-malloc.o)
-                0x0000000008000f9c                malloc
- .text.free     0x0000000008000fb0       0x14 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-malloc.o)
-                0x0000000008000fb0                free
- .text          0x0000000008000fc4        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mallocr.o)
+ .text          0x080000c0      0x220 ./output/clock.o
+                0x080000c0                system_init
+                0x08000270                enabled_clock
+ .text          0x080002e0      0x3e8 ./output/gpio.o
+                0x080002e0                set_mode_pin
+                0x080004fe                write_pin
+                0x08000584                read_pin
+                0x080005ce                toggle_pin
+                0x08000656                init_pin
+ .text          0x080006c8      0x268 ./output/interrupt.o
+                0x080006c8                Reserved_IRQHandler
+                0x080006ce                NMI_Handler
+                0x080006d4                HardFault_Handler
+                0x080006da                SVC_Handler
+                0x080006e0                PendSV_Handler
+                0x080006e6                SysTick_Handler
+                0x080006ec                EXTI0_1_IRQHandler
+                0x08000748                EXTI2_3_IRQHandler
+                0x08000770                USART1_IRQHandler
+                0x080007c8                interrupt_init
+ .text          0x08000930      0x1fc ./output/main.o
+                0x08000930                delay
+                0x08000970                led_on
+                0x080009aa                led_off
+                0x080009e4                led_func
+                0x08000a48                main
+ .text          0x08000b2c        0x4 ./output/startup_ARMCM0.o
+                0x08000b2c                Reset_Handler
+ .text          0x08000b30      0x118 ./output/systick.o
+                0x08000b30                systick_init
+                0x08000b6c                start_systick
+                0x08000bac                get_state_systick
+                0x08000bd4                delay_ms_systick
+                0x08000c08                start_systick_test
+ .text          0x08000c48      0x148 ./output/usart.o
+                0x08000c48                usart_init
+                0x08000d08                usart_send_byte
+                0x08000d54                usart_send_string
+ .text          0x08000d90      0x248 ./output/cli.o
+                0x08000d90                help
+                0x08000e2c                init_cli
+                0x08000e94                add_cli
+                0x08000ec4                parse_cli
+ .text          0x08000fd8        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-malloc.o)
+ .text.malloc   0x08000fd8       0x14 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-malloc.o)
+                0x08000fd8                malloc
+ .text.free     0x08000fec       0x14 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-malloc.o)
+                0x08000fec                free
+ .text          0x08001000        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mallocr.o)
  .text._malloc_r
-                0x0000000008000fc4      0x554 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mallocr.o)
-                0x0000000008000fc4                _malloc_r
- .text          0x0000000008001518        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mlock.o)
+                0x08001000      0x554 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mallocr.o)
+                0x08001000                _malloc_r
+ .text          0x08001554        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mlock.o)
  .text.__malloc_lock
-                0x0000000008001518       0x10 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mlock.o)
-                0x0000000008001518                __malloc_lock
+                0x08001554       0x10 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mlock.o)
+                0x08001554                __malloc_lock
  .text.__malloc_unlock
-                0x0000000008001528       0x10 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mlock.o)
-                0x0000000008001528                __malloc_unlock
- .text          0x0000000008001538        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-sbrkr.o)
- .text._sbrk_r  0x0000000008001538       0x24 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-sbrkr.o)
-                0x0000000008001538                _sbrk_r
- .text          0x000000000800155c       0x88 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strcmp.o)
-                0x000000000800155c                strcmp
- .text          0x00000000080015e4        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strtok.o)
- .text.strtok   0x00000000080015e4       0x14 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strtok.o)
-                0x00000000080015e4                strtok
- .text          0x00000000080015f8        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strtok_r.o)
+                0x08001564       0x10 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mlock.o)
+                0x08001564                __malloc_unlock
+ .text          0x08001574        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-sbrkr.o)
+ .text._sbrk_r  0x08001574       0x24 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-sbrkr.o)
+                0x08001574                _sbrk_r
+ .text          0x08001598       0x88 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strcmp.o)
+                0x08001598                strcmp
+ .text          0x08001620        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strtok.o)
+ .text.strtok   0x08001620       0x14 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strtok.o)
+                0x08001620                strtok
+ .text          0x08001634        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strtok_r.o)
  .text.__strtok_r
-                0x00000000080015f8       0x64 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strtok_r.o)
-                0x00000000080015f8                __strtok_r
+                0x08001634       0x64 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strtok_r.o)
+                0x08001634                __strtok_r
  .text.strtok_r
-                0x000000000800165c        0xc /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strtok_r.o)
-                0x000000000800165c                strtok_r
- .text          0x0000000008001668        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-freer.o)
+                0x08001698        0xc C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strtok_r.o)
+                0x08001698                strtok_r
+ .text          0x080016a4        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-freer.o)
  .text._malloc_trim_r
-                0x0000000008001668       0xa0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-freer.o)
-                0x0000000008001668                _malloc_trim_r
- .text._free_r  0x0000000008001708      0x1d4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-freer.o)
-                0x0000000008001708                _free_r
- .text          0x00000000080018dc        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-impure.o)
- .text          0x00000000080018dc        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
+                0x080016a4       0xa0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-freer.o)
+                0x080016a4                _malloc_trim_r
+ .text._free_r  0x08001744      0x1d4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-freer.o)
+                0x08001744                _free_r
+ .text          0x08001918        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-impure.o)
+ .text          0x08001918        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
  .text.__retarget_lock_init
-                0x00000000080018dc        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
-                0x00000000080018dc                __retarget_lock_init
+                0x08001918        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+                0x08001918                __retarget_lock_init
  .text.__retarget_lock_init_recursive
-                0x00000000080018e0        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
-                0x00000000080018e0                __retarget_lock_init_recursive
+                0x0800191c        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+                0x0800191c                __retarget_lock_init_recursive
  .text.__retarget_lock_close
-                0x00000000080018e4        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
-                0x00000000080018e4                __retarget_lock_close
+                0x08001920        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+                0x08001920                __retarget_lock_close
  .text.__retarget_lock_close_recursive
-                0x00000000080018e8        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
-                0x00000000080018e8                __retarget_lock_close_recursive
+                0x08001924        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+                0x08001924                __retarget_lock_close_recursive
  .text.__retarget_lock_acquire
-                0x00000000080018ec        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
-                0x00000000080018ec                __retarget_lock_acquire
+                0x08001928        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+                0x08001928                __retarget_lock_acquire
  .text.__retarget_lock_acquire_recursive
-                0x00000000080018f0        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
-                0x00000000080018f0                __retarget_lock_acquire_recursive
+                0x0800192c        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+                0x0800192c                __retarget_lock_acquire_recursive
  .text.__retarget_lock_try_acquire
-                0x00000000080018f4        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
-                0x00000000080018f4                __retarget_lock_try_acquire
+                0x08001930        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+                0x08001930                __retarget_lock_try_acquire
  .text.__retarget_lock_try_acquire_recursive
-                0x00000000080018f8        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
-                0x00000000080018f8                __retarget_lock_try_acquire_recursive
+                0x08001934        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+                0x08001934                __retarget_lock_try_acquire_recursive
  .text.__retarget_lock_release
-                0x00000000080018fc        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
-                0x00000000080018fc                __retarget_lock_release
+                0x08001938        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+                0x08001938                __retarget_lock_release
  .text.__retarget_lock_release_recursive
-                0x0000000008001900        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
-                0x0000000008001900                __retarget_lock_release_recursive
- .text          0x0000000008001904        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-reent.o)
+                0x0800193c        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+                0x0800193c                __retarget_lock_release_recursive
+ .text          0x08001940        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-reent.o)
  .text.cleanup_glue
-                0x0000000008001904       0x1c /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-reent.o)
-                0x0000000008001904                cleanup_glue
+                0x08001940       0x1c C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-reent.o)
+                0x08001940                cleanup_glue
  .text._reclaim_reent
-                0x0000000008001920       0x94 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-reent.o)
-                0x0000000008001920                _reclaim_reent
- .text          0x00000000080019b4        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libnosys.a(sbrk.o)
- .text._sbrk    0x00000000080019b4       0x1c /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libnosys.a(sbrk.o)
-                0x00000000080019b4                _sbrk
+                0x0800195c       0x94 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-reent.o)
+                0x0800195c                _reclaim_reent
+ .text          0x080019f0        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libnosys.a(sbrk.o)
+ .text._sbrk    0x080019f0       0x1c C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libnosys.a(sbrk.o)
+                0x080019f0                _sbrk
  *(.init)
  *(.fini)
  *(.rodata*)
- .rodata        0x00000000080019d0       0x7a ./output/main.o
-                0x00000000080019d0                list_pins
- *fill*         0x0000000008001a4a        0x2 
- .rodata        0x0000000008001a4c       0x86 ./output/cli.o
- *fill*         0x0000000008001ad2        0x2 
+ .rodata        0x08001a0c       0xa2 ./output/main.o
+                0x08001a0c                init_list_pins
+ *fill*         0x08001aae        0x2 
+ .rodata        0x08001ab0       0x86 ./output/cli.o
+ *fill*         0x08001b36        0x2 
  .rodata._global_impure_ptr
-                0x0000000008001ad4        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-impure.o)
-                0x0000000008001ad4                _global_impure_ptr
+                0x08001b38        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-impure.o)
+                0x08001b38                _global_impure_ptr
  *(.eh_frame*)
 
-.glue_7         0x0000000008001ad8        0x0
- .glue_7        0x0000000008001ad8        0x0 linker stubs
+.glue_7         0x08001b3c        0x0
+ .glue_7        0x08001b3c        0x0 linker stubs
 
-.glue_7t        0x0000000008001ad8        0x0
- .glue_7t       0x0000000008001ad8        0x0 linker stubs
+.glue_7t        0x08001b3c        0x0
+ .glue_7t       0x08001b3c        0x0 linker stubs
 
-.vfp11_veneer   0x0000000008001ad8        0x0
- .vfp11_veneer  0x0000000008001ad8        0x0 linker stubs
+.vfp11_veneer   0x08001b3c        0x0
+ .vfp11_veneer  0x08001b3c        0x0 linker stubs
 
-.v4_bx          0x0000000008001ad8        0x0
- .v4_bx         0x0000000008001ad8        0x0 linker stubs
+.v4_bx          0x08001b3c        0x0
+ .v4_bx         0x08001b3c        0x0 linker stubs
 
-.iplt           0x0000000008001ad8        0x0
- .iplt          0x0000000008001ad8        0x0 ./output/clock.o
+.iplt           0x08001b3c        0x0
+ .iplt          0x08001b3c        0x0 ./output/clock.o
 
-.rel.dyn        0x0000000008001ad8        0x0
- .rel.iplt      0x0000000008001ad8        0x0 ./output/clock.o
+.rel.dyn        0x08001b3c        0x0
+ .rel.iplt      0x08001b3c        0x0 ./output/clock.o
 
-.data           0x0000000020000000      0x850
-                0x0000000020000000                __data_start__ = .
+.data           0x20000000      0x850
+                0x20000000                __data_start__ = .
  *(vtable)
  *(.data*)
- .data          0x0000000020000000        0x0 ./output/clock.o
- .data          0x0000000020000000        0x0 ./output/gpio.o
- .data          0x0000000020000000        0x0 ./output/interrupt.o
- .data          0x0000000020000000       0x14 ./output/main.o
-                0x0000000020000000                list_commands
- .data          0x0000000020000014        0x0 ./output/startup_ARMCM0.o
- .data          0x0000000020000014        0x0 ./output/systick.o
- .data          0x0000000020000014        0x0 ./output/usart.o
- .data          0x0000000020000014        0x0 ./output/cli.o
- .data          0x0000000020000014        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-malloc.o)
- .data          0x0000000020000014        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mallocr.o)
+ .data          0x20000000        0x0 ./output/clock.o
+ .data          0x20000000        0x0 ./output/gpio.o
+ .data          0x20000000        0x0 ./output/interrupt.o
+ .data          0x20000000       0x14 ./output/main.o
+                0x20000000                list_commands
+ .data          0x20000014        0x0 ./output/startup_ARMCM0.o
+ .data          0x20000014        0x0 ./output/systick.o
+ .data          0x20000014        0x0 ./output/usart.o
+ .data          0x20000014        0x0 ./output/cli.o
+ .data          0x20000014        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-malloc.o)
+ .data          0x20000014        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mallocr.o)
  .data.__malloc_av_
-                0x0000000020000014      0x408 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mallocr.o)
-                0x0000000020000014                __malloc_av_
+                0x20000014      0x408 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mallocr.o)
+                0x20000014                __malloc_av_
  .data.__malloc_sbrk_base
-                0x000000002000041c        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mallocr.o)
-                0x000000002000041c                __malloc_sbrk_base
+                0x2000041c        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mallocr.o)
+                0x2000041c                __malloc_sbrk_base
  .data.__malloc_trim_threshold
-                0x0000000020000420        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mallocr.o)
-                0x0000000020000420                __malloc_trim_threshold
- .data          0x0000000020000424        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mlock.o)
- .data          0x0000000020000424        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-sbrkr.o)
- .data          0x0000000020000424        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strcmp.o)
- .data          0x0000000020000424        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strtok.o)
- .data          0x0000000020000424        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strtok_r.o)
- .data          0x0000000020000424        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-freer.o)
- .data          0x0000000020000424        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-impure.o)
+                0x20000420        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mallocr.o)
+                0x20000420                __malloc_trim_threshold
+ .data          0x20000424        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mlock.o)
+ .data          0x20000424        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-sbrkr.o)
+ .data          0x20000424        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strcmp.o)
+ .data          0x20000424        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strtok.o)
+ .data          0x20000424        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strtok_r.o)
+ .data          0x20000424        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-freer.o)
+ .data          0x20000424        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-impure.o)
  .data._impure_ptr
-                0x0000000020000424        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-impure.o)
-                0x0000000020000424                _impure_ptr
+                0x20000424        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-impure.o)
+                0x20000424                _impure_ptr
  .data.impure_data
-                0x0000000020000428      0x428 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-impure.o)
- .data          0x0000000020000850        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
- .data          0x0000000020000850        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-reent.o)
- .data          0x0000000020000850        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libnosys.a(sbrk.o)
-                0x0000000020000850                __data_end__ = .
+                0x20000428      0x428 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-impure.o)
+ .data          0x20000850        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+ .data          0x20000850        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-reent.o)
+ .data          0x20000850        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libnosys.a(sbrk.o)
+                0x20000850                __data_end__ = .
 
-.igot.plt       0x0000000020000850        0x0
- .igot.plt      0x0000000020000850        0x0 ./output/clock.o
+.igot.plt       0x20000850        0x0
+ .igot.plt      0x20000850        0x0 ./output/clock.o
 
-.bss            0x0000000020000850       0x70
-                0x0000000020000850                . = ALIGN (0x4)
-                0x0000000020000850                __bss_start__ = .
+.bss            0x20000850       0x70
+                0x20000850                . = ALIGN (0x4)
+                0x20000850                __bss_start__ = .
  *(.bss*)
- .bss           0x0000000020000850        0x0 ./output/clock.o
- .bss           0x0000000020000850        0x0 ./output/gpio.o
- .bss           0x0000000020000850        0x5 ./output/interrupt.o
-                0x0000000020000850                led_state
-                0x0000000020000854                rx_data
- .bss           0x0000000020000855        0x0 ./output/main.o
- .bss           0x0000000020000855        0x0 ./output/startup_ARMCM0.o
- .bss           0x0000000020000855        0x0 ./output/systick.o
- .bss           0x0000000020000855        0x0 ./output/usart.o
- *fill*         0x0000000020000855        0x3 
- .bss           0x0000000020000858        0x8 ./output/cli.o
- .bss           0x0000000020000860        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-malloc.o)
- .bss           0x0000000020000860        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mallocr.o)
+ .bss           0x20000850        0x0 ./output/clock.o
+ .bss           0x20000850        0x0 ./output/gpio.o
+ .bss           0x20000850        0x5 ./output/interrupt.o
+                0x20000850                led_state
+                0x20000854                rx_data
+ .bss           0x20000855        0x0 ./output/main.o
+ .bss           0x20000855        0x0 ./output/startup_ARMCM0.o
+ .bss           0x20000855        0x0 ./output/systick.o
+ .bss           0x20000855        0x0 ./output/usart.o
+ *fill*         0x20000855        0x3 
+ .bss           0x20000858        0x8 ./output/cli.o
+ .bss           0x20000860        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-malloc.o)
+ .bss           0x20000860        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mallocr.o)
  .bss.__malloc_current_mallinfo
-                0x0000000020000860       0x28 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mallocr.o)
-                0x0000000020000860                __malloc_current_mallinfo
+                0x20000860       0x28 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mallocr.o)
+                0x20000860                __malloc_current_mallinfo
  .bss.__malloc_max_sbrked_mem
-                0x0000000020000888        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mallocr.o)
-                0x0000000020000888                __malloc_max_sbrked_mem
+                0x20000888        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mallocr.o)
+                0x20000888                __malloc_max_sbrked_mem
  .bss.__malloc_max_total_mem
-                0x000000002000088c        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mallocr.o)
-                0x000000002000088c                __malloc_max_total_mem
+                0x2000088c        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mallocr.o)
+                0x2000088c                __malloc_max_total_mem
  .bss.__malloc_top_pad
-                0x0000000020000890        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mallocr.o)
-                0x0000000020000890                __malloc_top_pad
- .bss           0x0000000020000894        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mlock.o)
- .bss           0x0000000020000894        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-sbrkr.o)
- .bss           0x0000000020000894        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strcmp.o)
- .bss           0x0000000020000894        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strtok.o)
- .bss           0x0000000020000894        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strtok_r.o)
- .bss           0x0000000020000894        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-freer.o)
- .bss           0x0000000020000894        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-impure.o)
- .bss           0x0000000020000894        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
- .bss           0x0000000020000894        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-reent.o)
- .bss           0x0000000020000894        0x0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libnosys.a(sbrk.o)
+                0x20000890        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mallocr.o)
+                0x20000890                __malloc_top_pad
+ .bss           0x20000894        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mlock.o)
+ .bss           0x20000894        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-sbrkr.o)
+ .bss           0x20000894        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strcmp.o)
+ .bss           0x20000894        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strtok.o)
+ .bss           0x20000894        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strtok_r.o)
+ .bss           0x20000894        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-freer.o)
+ .bss           0x20000894        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-impure.o)
+ .bss           0x20000894        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+ .bss           0x20000894        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-reent.o)
+ .bss           0x20000894        0x0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libnosys.a(sbrk.o)
  .bss.heap_end.4102
-                0x0000000020000894        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libnosys.a(sbrk.o)
+                0x20000894        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libnosys.a(sbrk.o)
  *(COMMON)
- COMMON         0x0000000020000898       0x21 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
-                0x0000000020000898                __lock___atexit_recursive_mutex
-                0x000000002000089c                __lock___arc4random_mutex
-                0x00000000200008a0                __lock___env_recursive_mutex
-                0x00000000200008a4                __lock___sinit_recursive_mutex
-                0x00000000200008a8                __lock___malloc_recursive_mutex
-                0x00000000200008ac                __lock___at_quick_exit_mutex
-                0x00000000200008b0                __lock___dd_hash_mutex
-                0x00000000200008b4                __lock___tz_mutex
-                0x00000000200008b8                __lock___sfp_recursive_mutex
- *fill*         0x00000000200008b9        0x3 
- COMMON         0x00000000200008bc        0x4 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-reent.o)
-                0x00000000200008bc                errno
-                0x00000000200008c0                . = ALIGN (0x4)
-                0x00000000200008c0                __bss_end__ = .
+ COMMON         0x20000898       0x21 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+                0x20000898                __lock___atexit_recursive_mutex
+                0x2000089c                __lock___arc4random_mutex
+                0x200008a0                __lock___env_recursive_mutex
+                0x200008a4                __lock___sinit_recursive_mutex
+                0x200008a8                __lock___malloc_recursive_mutex
+                0x200008ac                __lock___at_quick_exit_mutex
+                0x200008b0                __lock___dd_hash_mutex
+                0x200008b4                __lock___tz_mutex
+                0x200008b8                __lock___sfp_recursive_mutex
+ *fill*         0x200008b9        0x3 
+ COMMON         0x200008bc        0x4 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-reent.o)
+                0x200008bc                errno
+                0x200008c0                . = ALIGN (0x4)
+                0x200008c0                __bss_end__ = .
 
-.heap           0x00000000200008c0      0x200
-                0x00000000200008c0                __HeapBase = .
-                0x00000000200008c0                __end__ = .
-                0x00000000200008c0                end = __end__
+.heap           0x200008c0      0x200
+                0x200008c0                __HeapBase = .
+                0x200008c0                __end__ = .
+                0x200008c0                end = __end__
  *(.heap*)
- .heap          0x00000000200008c0      0x200 ./output/startup_ARMCM0.o
-                0x0000000020000ac0                __HeapLimit = .
+ .heap          0x200008c0      0x200 ./output/startup_ARMCM0.o
+                0x20000ac0                __HeapLimit = .
 
-.stack_dummy    0x00000000200008c0      0x100
+.stack_dummy    0x200008c0      0x100
  *(.stack*)
- .stack         0x00000000200008c0      0x100 ./output/startup_ARMCM0.o
-                0x0000000020001000                __StackTop = (ORIGIN (RAM) + LENGTH (RAM))
-                0x0000000020000f00                __StackLimit = (__StackTop - SIZEOF (.stack_dummy))
-                [!provide]                        PROVIDE (__stack = __StackTop)
-                0x0000000000000001                ASSERT ((__StackLimit >= __HeapLimit), region RAM overflowed with stack)
+ .stack         0x200008c0      0x100 ./output/startup_ARMCM0.o
+                0x20001000                __StackTop = (ORIGIN (RAM) + LENGTH (RAM))
+                0x20000f00                __StackLimit = (__StackTop - SIZEOF (.stack_dummy))
+                [!provide]                PROVIDE (__stack = __StackTop)
+                0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region RAM overflowed with stack)
 LOAD ./output/clock.o
 LOAD ./output/gpio.o
 LOAD ./output/interrupt.o
@@ -344,141 +343,141 @@ LOAD ./output/startup_ARMCM0.o
 LOAD ./output/systick.o
 LOAD ./output/usart.o
 LOAD ./output/cli.o
-LOAD /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a
-LOAD /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libnosys.a
+LOAD C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a
+LOAD C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libnosys.a
 OUTPUT(./output/stm32f0_cli_demo.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000     0x146e
- .debug_info    0x0000000000000000      0x106 ./output/clock.o
- .debug_info    0x0000000000000106      0x264 ./output/gpio.o
- .debug_info    0x000000000000036a      0x172 ./output/interrupt.o
- .debug_info    0x00000000000004dc      0x2b6 ./output/main.o
- .debug_info    0x0000000000000792      0x120 ./output/systick.o
- .debug_info    0x00000000000008b2       0xf7 ./output/usart.o
- .debug_info    0x00000000000009a9      0xac5 ./output/cli.o
+.debug_info     0x00000000     0x146e
+ .debug_info    0x00000000      0x106 ./output/clock.o
+ .debug_info    0x00000106      0x264 ./output/gpio.o
+ .debug_info    0x0000036a      0x172 ./output/interrupt.o
+ .debug_info    0x000004dc      0x2b6 ./output/main.o
+ .debug_info    0x00000792      0x120 ./output/systick.o
+ .debug_info    0x000008b2       0xf7 ./output/usart.o
+ .debug_info    0x000009a9      0xac5 ./output/cli.o
 
-.debug_abbrev   0x0000000000000000      0x701
- .debug_abbrev  0x0000000000000000       0x8e ./output/clock.o
- .debug_abbrev  0x000000000000008e      0x11a ./output/gpio.o
- .debug_abbrev  0x00000000000001a8       0x9d ./output/interrupt.o
- .debug_abbrev  0x0000000000000245      0x148 ./output/main.o
- .debug_abbrev  0x000000000000038d       0xb0 ./output/systick.o
- .debug_abbrev  0x000000000000043d       0xa1 ./output/usart.o
- .debug_abbrev  0x00000000000004de      0x223 ./output/cli.o
+.debug_abbrev   0x00000000      0x701
+ .debug_abbrev  0x00000000       0x8e ./output/clock.o
+ .debug_abbrev  0x0000008e      0x11a ./output/gpio.o
+ .debug_abbrev  0x000001a8       0x9d ./output/interrupt.o
+ .debug_abbrev  0x00000245      0x148 ./output/main.o
+ .debug_abbrev  0x0000038d       0xb0 ./output/systick.o
+ .debug_abbrev  0x0000043d       0xa1 ./output/usart.o
+ .debug_abbrev  0x000004de      0x223 ./output/cli.o
 
-.debug_aranges  0x0000000000000000       0xe0
+.debug_aranges  0x00000000       0xe0
  .debug_aranges
-                0x0000000000000000       0x20 ./output/clock.o
+                0x00000000       0x20 ./output/clock.o
  .debug_aranges
-                0x0000000000000020       0x20 ./output/gpio.o
+                0x00000020       0x20 ./output/gpio.o
  .debug_aranges
-                0x0000000000000040       0x20 ./output/interrupt.o
+                0x00000040       0x20 ./output/interrupt.o
  .debug_aranges
-                0x0000000000000060       0x20 ./output/main.o
+                0x00000060       0x20 ./output/main.o
  .debug_aranges
-                0x0000000000000080       0x20 ./output/systick.o
+                0x00000080       0x20 ./output/systick.o
  .debug_aranges
-                0x00000000000000a0       0x20 ./output/usart.o
+                0x000000a0       0x20 ./output/usart.o
  .debug_aranges
-                0x00000000000000c0       0x20 ./output/cli.o
+                0x000000c0       0x20 ./output/cli.o
 
-.debug_line     0x0000000000000000      0x62b
- .debug_line    0x0000000000000000       0xd9 ./output/clock.o
- .debug_line    0x00000000000000d9       0xcc ./output/gpio.o
- .debug_line    0x00000000000001a5       0xab ./output/interrupt.o
- .debug_line    0x0000000000000250      0x111 ./output/main.o
- .debug_line    0x0000000000000361       0x6a ./output/systick.o
- .debug_line    0x00000000000003cb       0x67 ./output/usart.o
- .debug_line    0x0000000000000432      0x1f9 ./output/cli.o
+.debug_line     0x00000000      0x5da
+ .debug_line    0x00000000       0xd9 ./output/clock.o
+ .debug_line    0x000000d9       0xcd ./output/gpio.o
+ .debug_line    0x000001a6       0xab ./output/interrupt.o
+ .debug_line    0x00000251      0x116 ./output/main.o
+ .debug_line    0x00000367       0x6a ./output/systick.o
+ .debug_line    0x000003d1       0x67 ./output/usart.o
+ .debug_line    0x00000438      0x1a2 ./output/cli.o
 
-.debug_str      0x0000000000000000      0x90e
- .debug_str     0x0000000000000000      0x15c ./output/clock.o
-                                        0x175 (size before relaxing)
- .debug_str     0x000000000000015c       0xba ./output/gpio.o
-                                        0x1bd (size before relaxing)
- .debug_str     0x0000000000000216       0xcf ./output/interrupt.o
-                                        0x1ca (size before relaxing)
- .debug_str     0x00000000000002e5       0xb7 ./output/main.o
-                                        0x1fd (size before relaxing)
- .debug_str     0x000000000000039c       0x68 ./output/systick.o
-                                        0x164 (size before relaxing)
- .debug_str     0x0000000000000404       0x56 ./output/usart.o
-                                        0x158 (size before relaxing)
- .debug_str     0x000000000000045a      0x4b4 ./output/cli.o
-                                        0x659 (size before relaxing)
+.debug_str      0x00000000      0x90c
+ .debug_str     0x00000000      0x155 ./output/clock.o
+                                0x16e (size before relaxing)
+ .debug_str     0x00000155       0xb0 ./output/gpio.o
+                                0x1b6 (size before relaxing)
+ .debug_str     0x00000205       0xcf ./output/interrupt.o
+                                0x1c3 (size before relaxing)
+ .debug_str     0x000002d4       0xc6 ./output/main.o
+                                0x1fb (size before relaxing)
+ .debug_str     0x0000039a       0x68 ./output/systick.o
+                                0x15d (size before relaxing)
+ .debug_str     0x00000402       0x56 ./output/usart.o
+                                0x151 (size before relaxing)
+ .debug_str     0x00000458      0x4b4 ./output/cli.o
+                                0x652 (size before relaxing)
 
-.comment        0x0000000000000000       0x7f
- .comment       0x0000000000000000       0x7f ./output/clock.o
-                                         0x80 (size before relaxing)
- .comment       0x000000000000007f       0x80 ./output/gpio.o
- .comment       0x000000000000007f       0x80 ./output/interrupt.o
- .comment       0x000000000000007f       0x80 ./output/main.o
- .comment       0x000000000000007f       0x80 ./output/systick.o
- .comment       0x000000000000007f       0x80 ./output/usart.o
- .comment       0x000000000000007f       0x80 ./output/cli.o
+.comment        0x00000000       0x7f
+ .comment       0x00000000       0x7f ./output/clock.o
+                                 0x80 (size before relaxing)
+ .comment       0x0000007f       0x80 ./output/gpio.o
+ .comment       0x0000007f       0x80 ./output/interrupt.o
+ .comment       0x0000007f       0x80 ./output/main.o
+ .comment       0x0000007f       0x80 ./output/systick.o
+ .comment       0x0000007f       0x80 ./output/usart.o
+ .comment       0x0000007f       0x80 ./output/cli.o
 
 .ARM.attributes
-                0x0000000000000000       0x2f
+                0x00000000       0x2f
  .ARM.attributes
-                0x0000000000000000       0x31 ./output/clock.o
+                0x00000000       0x31 ./output/clock.o
  .ARM.attributes
-                0x0000000000000031       0x31 ./output/gpio.o
+                0x00000031       0x31 ./output/gpio.o
  .ARM.attributes
-                0x0000000000000062       0x31 ./output/interrupt.o
+                0x00000062       0x31 ./output/interrupt.o
  .ARM.attributes
-                0x0000000000000093       0x31 ./output/main.o
+                0x00000093       0x31 ./output/main.o
  .ARM.attributes
-                0x00000000000000c4       0x1b ./output/startup_ARMCM0.o
+                0x000000c4       0x1b ./output/startup_ARMCM0.o
  .ARM.attributes
-                0x00000000000000df       0x31 ./output/systick.o
+                0x000000df       0x31 ./output/systick.o
  .ARM.attributes
-                0x0000000000000110       0x31 ./output/usart.o
+                0x00000110       0x31 ./output/usart.o
  .ARM.attributes
-                0x0000000000000141       0x31 ./output/cli.o
+                0x00000141       0x31 ./output/cli.o
  .ARM.attributes
-                0x0000000000000172       0x2c /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-malloc.o)
+                0x00000172       0x2c C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-malloc.o)
  .ARM.attributes
-                0x000000000000019e       0x2c /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mallocr.o)
+                0x0000019e       0x2c C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mallocr.o)
  .ARM.attributes
-                0x00000000000001ca       0x2c /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mlock.o)
+                0x000001ca       0x2c C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mlock.o)
  .ARM.attributes
-                0x00000000000001f6       0x2c /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-sbrkr.o)
+                0x000001f6       0x2c C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-sbrkr.o)
  .ARM.attributes
-                0x0000000000000222       0x1b /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strcmp.o)
+                0x00000222       0x1b C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strcmp.o)
  .ARM.attributes
-                0x000000000000023d       0x2c /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strtok.o)
+                0x0000023d       0x2c C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strtok.o)
  .ARM.attributes
-                0x0000000000000269       0x2c /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strtok_r.o)
+                0x00000269       0x2c C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strtok_r.o)
  .ARM.attributes
-                0x0000000000000295       0x2c /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-freer.o)
+                0x00000295       0x2c C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-freer.o)
  .ARM.attributes
-                0x00000000000002c1       0x2c /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-impure.o)
+                0x000002c1       0x2c C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-impure.o)
  .ARM.attributes
-                0x00000000000002ed       0x2c /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
+                0x000002ed       0x2c C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
  .ARM.attributes
-                0x0000000000000319       0x2c /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-reent.o)
+                0x00000319       0x2c C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-reent.o)
  .ARM.attributes
-                0x0000000000000345       0x2c /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libnosys.a(sbrk.o)
+                0x00000345       0x2c C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libnosys.a(sbrk.o)
 
-.debug_frame    0x0000000000000000      0x780
- .debug_frame   0x0000000000000000       0x50 ./output/clock.o
- .debug_frame   0x0000000000000050       0xb0 ./output/gpio.o
- .debug_frame   0x0000000000000100      0x138 ./output/interrupt.o
- .debug_frame   0x0000000000000238       0xb0 ./output/main.o
- .debug_frame   0x00000000000002e8       0xb0 ./output/systick.o
- .debug_frame   0x0000000000000398       0x70 ./output/usart.o
- .debug_frame   0x0000000000000408       0x90 ./output/cli.o
- .debug_frame   0x0000000000000498       0x40 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-malloc.o)
- .debug_frame   0x00000000000004d8       0x3c /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mallocr.o)
- .debug_frame   0x0000000000000514       0x40 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-mlock.o)
- .debug_frame   0x0000000000000554       0x2c /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-sbrkr.o)
- .debug_frame   0x0000000000000580       0x20 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strcmp.o)
- .debug_frame   0x00000000000005a0       0x28 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strtok.o)
- .debug_frame   0x00000000000005c8       0x48 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-strtok_r.o)
- .debug_frame   0x0000000000000610       0x58 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-freer.o)
- .debug_frame   0x0000000000000668       0xb0 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-lock.o)
- .debug_frame   0x0000000000000718       0x48 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libc.a(lib_a-reent.o)
- .debug_frame   0x0000000000000760       0x20 /Users/anhvt6/tools/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/lib/thumb/v6-m/libnosys.a(sbrk.o)
+.debug_frame    0x00000000      0x780
+ .debug_frame   0x00000000       0x50 ./output/clock.o
+ .debug_frame   0x00000050       0xb0 ./output/gpio.o
+ .debug_frame   0x00000100      0x138 ./output/interrupt.o
+ .debug_frame   0x00000238       0xb0 ./output/main.o
+ .debug_frame   0x000002e8       0xb0 ./output/systick.o
+ .debug_frame   0x00000398       0x70 ./output/usart.o
+ .debug_frame   0x00000408       0x90 ./output/cli.o
+ .debug_frame   0x00000498       0x40 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-malloc.o)
+ .debug_frame   0x000004d8       0x3c C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mallocr.o)
+ .debug_frame   0x00000514       0x40 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-mlock.o)
+ .debug_frame   0x00000554       0x2c C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-sbrkr.o)
+ .debug_frame   0x00000580       0x20 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strcmp.o)
+ .debug_frame   0x000005a0       0x28 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strtok.o)
+ .debug_frame   0x000005c8       0x48 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strtok_r.o)
+ .debug_frame   0x00000610       0x58 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-freer.o)
+ .debug_frame   0x00000668       0xb0 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+ .debug_frame   0x00000718       0x48 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-reent.o)
+ .debug_frame   0x00000760       0x20 C:/tools/7_2018-q2-update/arm-none-eabi/lib/thumb/v6-m\libnosys.a(sbrk.o)
 
-.debug_ranges   0x0000000000000000       0x18
- .debug_ranges  0x0000000000000000       0x18 ./output/main.o
+.debug_ranges   0x00000000       0x18
+ .debug_ranges  0x00000000       0x18 ./output/main.o
