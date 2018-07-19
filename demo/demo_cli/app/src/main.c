@@ -122,8 +122,8 @@ void led_func(u8_t argc, u8_t **argv)
 void main(void)
 {
     u8_t i;
-    u8_t t_command_led_on[] = "led on 0";
-    u8_t t_command_led_off[] = "led off 0";
+    const u8_t t_command_led_on[] = "led on 0";
+    const u8_t t_command_led_off[] = "led off 0";
 
     system_init(PREDIV_1, PLL_MUL_12, PLL_SCR_HSI, PREDIV_1, SYSCLKSOURCE_PLLCLK, APB1_HCLK_1);
     enabled_clock();
@@ -132,13 +132,13 @@ void main(void)
     systick_init();
 
     interrupt_init();
-    
+
     led_on(LD3);
     delay_ms_systick(200);
     led_off(LD3);
     delay_ms_systick(200);
 
-    usart_send_string("---> Command Line Interface - CLI <---");
+    usart_send_string("\n\r---> Command Line Interface - CLI <---");
 
     init_cli();
 
@@ -150,9 +150,9 @@ void main(void)
     #if 1
     while(1)
     {
-        parse_cli(t_command_led_on);
+        parse_cli(t_command_led_on, strlen(t_command_led_on));
         delay(0x7ff);
-        parse_cli(t_command_led_off);
+        parse_cli(t_command_led_off, strlen(t_command_led_off));
         delay(0x7ff);
     }
     #else

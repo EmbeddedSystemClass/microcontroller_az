@@ -31,7 +31,7 @@
 .ifdef __STACK_SIZE
     .equ    Stack_Size, __STACK_SIZE
 .else
-    .equ    Stack_Size, 0x00000400
+    .equ    Stack_Size, 0x00000100
 .endif
     .globl    __StackTop
     .globl    __StackLimit
@@ -78,7 +78,7 @@ __Vectors:
     .long  Reserved_IRQHandler   /* Reserved */
     .long  PendSV_Handler        /* PendSV Handler */
     .long  SysTick_Handler       /* SysTick Handler */
-    
+
     /* External interrupts */
     .long  Reserved_IRQHandler         /*  0: Reserved                   */
     .long  Reserved_IRQHandler         /*  1: Reserved                   */
@@ -249,13 +249,6 @@ Reset_Handler:
 .L_loop3_done:
 .endif /* __STARTUP_CLEAR_BSS_MULTIPLE || __STARTUP_CLEAR_BSS */
 
-.ifndef __NO_SYSTEM_INIT
-    bl    SystemInit
-.endif
-
-.ifndef __START
-.def __START _start
-.endif
     bl    main
 
 LoopForever:

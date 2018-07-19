@@ -127,19 +127,24 @@ void add_cli(cli_t *new_command)
  * Parameter        :
  * Return           : None
 */
-void parse_cli(u8_t *str_command)
+void parse_cli(const u8_t *str_command, const u8_t len_command)
 {
     u8_t *temp_str = NULL;
     u8_t num_of_input = 0;
     cli_t *temp_command = start_point_command;
     u8_t **input_parameter;
+    u8_t *t_str_command = NULL;
 
-    temp_str = strtok(str_command, DELIMITER_CHARACTERS);
+    /* copy string command from input parameter into local variable */
+    t_str_command = malloc(sizeof(u8_t) * len_command);
+    memcpy(t_str_command, str_command, len_command);
+
+    temp_str = strtok(t_str_command, DELIMITER_CHARACTERS);
     while(temp_command != NULL)
     {
         if (!(strcmp (temp_str, temp_command->command)))
         {
-            input_parameter = malloc(sizeof(u32_t)*temp_command->num_input_par);
+            input_parameter = malloc(sizeof(u32_t) * temp_command->num_input_par);
             num_of_input = 0;
             temp_str = strtok(NULL, DELIMITER_CHARACTERS);
             while(NULL != temp_str)
@@ -185,6 +190,7 @@ void parse_cli(u8_t *str_command)
         printf("\n\rDon't support the command !");
         #endif /* CLI_STAND_ALONE */
     }
+    free(t_str_command);
 
 }
 
