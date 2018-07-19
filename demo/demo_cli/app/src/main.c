@@ -102,13 +102,15 @@ void led_off(u8_t led_id)
 
 void led_func(u8_t argc, u8_t **argv)
 {
+    u8_t temp = argv[1][0] - '0';
+
     if(!strcmp("on", argv[0]))
     {
-        led_on(argv[1] - '0');
+        led_on(temp);
     }
     else if(!strcmp("off", argv[0]))
     {
-        led_off(argv[1] - '0');
+        led_off(temp);
     }
     else
     {
@@ -149,9 +151,9 @@ void main(void)
     while(1)
     {
         parse_cli(t_command_led_on);
-        delay_ms_systick(500);
+        delay(0x7ff);
         parse_cli(t_command_led_off);
-        delay_ms_systick(500);
+        delay(0x7ff);
     }
     #else
         start_systick_test(100);

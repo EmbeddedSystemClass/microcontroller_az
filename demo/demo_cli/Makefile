@@ -20,7 +20,7 @@ OBJCPY			:= $(COMPILER_DIR)/bin/$(PREFIX_GCC_COMPILER)-objcopy
 FILE_TO_LINK	:= $(OUTPUT_PATH)/clock.o $(OUTPUT_PATH)/gpio.o $(OUTPUT_PATH)/interrupt.o $(OUTPUT_PATH)/main.o $(OUTPUT_PATH)/startup_ARMCM0.o $(OUTPUT_PATH)/systick.o $(OUTPUT_PATH)/usart.o $(OUTPUT_PATH)/cli.o
 
 CC_OPT			:= -march=armv6-m -mcpu=cortex-m0 -c -O0 -g -mthumb -I$(INC_DIR) -I$(PRO_DIR)/lib -I$(PRO_DIR)/lib/cli/inc -I$(PRO_DIR)/app/inc -DCLI_STAND_ALONE
-ASM_OPT			:= -march=armv6-m -mcpu=cortex-m0 -c -mthumb
+ASM_OPT			:= -march=armv6-m -mcpu=cortex-m0 -c -mthumb --defsym __NO_SYSTEM_INIT=1 --defsym __START=main --defsym __STARTUP_CLEAR_BSS=1
 LD_OPT			:= -T $(LINKER_FILE) -Map $(OUTPUT_PATH)/$(PROJ_NAME).map $(FILE_TO_LINK) -L$(COMPILER_DIR)/arm-none-eabi/lib/thumb/v6-m -lc -lnosys
 
 .PHONY: all
