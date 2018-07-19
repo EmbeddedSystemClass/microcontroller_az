@@ -100,6 +100,7 @@ void USART1_IRQHandler(void)
     {
         rx_data = read_reg(USART_RDR, 0x000000FF);
         write_reg(USART_RQR, (1<<3)); /* ghi giá trị 1 tới USART_RQR[RXFRQ] để xóa cờ USART_ISR[RXNE] */
+        usart_send_byte(rx_data);
     }
 }
 

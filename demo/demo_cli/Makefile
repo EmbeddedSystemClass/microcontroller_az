@@ -24,8 +24,8 @@ OBJECT_FILE		:= $(addprefix $(BUILD_DIR)/,$(addsuffix .o,$(basename $(notdir $(B
 DEPS 			:= $(OBJECT_FILE:.o=.d)
 
 CC_OPT			:= -march=armv6-m -mcpu=cortex-m0 -c -g -mthumb $(INC_DIR) -DCLI_STAND_ALONE
-ASM_OPT			:= -march=armv6-m -mcpu=cortex-m0 -c -mthumb --defsym __STARTUP_CLEAR_BSS=1 --defsym __STACK_SIZE=0x100 --defsym __HEAP_SIZE=0x400
-LD_OPT			:= -T $(LINKER_FILE) -Map $(BUILD_DIR)/$(PROJ_NAME).map $(OBJECT_FILE) -L $(COMPILER_DIR)/arm-none-eabi/lib/thumb/v6-m -lc -lnosys
+ASM_OPT			:= -march=armv6-m -mcpu=cortex-m0 -c -mthumb --defsym __STARTUP_CLEAR_BSS=1 --defsym __STACK_SIZE=0x300 --defsym __HEAP_SIZE=0x800
+LD_OPT			:= -T $(LINKER_FILE) -Map $(BUILD_DIR)/$(PROJ_NAME).map $(OBJECT_FILE) -L $(COMPILER_DIR)/arm-none-eabi/lib/thumb/v6-m -lc_nano -lnosys
 
 .PHONY: all
 
@@ -55,6 +55,7 @@ $(foreach file,$(CC_FILE),$(eval $(call generate_c_rule,$(file))))
 $(foreach file,$(ASM_FILE),$(eval $(call generate_asm_rule,$(file))))
 
 size: $(BUILD_DIR)/$(PROJ_NAME).elf
+	@echo "Size area memories in binary image $(BUILD_DIR)/$(PROJ_NAME).elf"
 	$(SIZE) $(BUILD_DIR)/$(PROJ_NAME).elf
 
 d_size: $(BUILD_DIR)/$(PROJ_NAME).elf

@@ -42,7 +42,7 @@ typedef struct _cli_t_ {
 /* ============================== API ============================== */
 extern void help(u8_t argc, u8_t **argv);
 extern void init_cli(void);
-extern void add_cli(cli_t *new_command);
+extern s8_t add_cli(cli_t *new_command, u8_t num_command);
 extern void parse_cli(const u8_t *str_command, const u8_t len_command);
 
 

@@ -24,5 +24,6 @@ extern void delay(unsigned int timeout);
 extern void led_on(u8_t led_id);
 extern void led_off(u8_t led_id);
 extern void led_func(u8_t argc, u8_t **argv);
+extern void test_func(u8_t argc, u8_t **argv);
 
 #endif

@@ -54,6 +54,7 @@ void help(u8_t argc, u8_t **argv)
             usart_send_string(temp_command->command);
             usart_send_string("\n\r\t");
             usart_send_string(temp_command->description);
+            usart_send_string("\n\r");
             #else
             printf("\n\r%s\t: %s", temp_command->command, temp_command->description);
             #endif /* CLI_STAND_ALONE */
@@ -68,8 +69,9 @@ void help(u8_t argc, u8_t **argv)
                 usart_send_string(temp_command->command);
                 usart_send_string("\n\r\t");
                 usart_send_string(temp_command->description);
+                usart_send_string("\n\r");
                 #else
-                printf("\n\r%s\t: %s", temp_command->command, temp_command->description);
+                printf("%s\t: %s\n\r", temp_command->command, temp_command->description);
                 #endif /* CLI_STAND_ALONE */
             }
         }
@@ -113,11 +115,26 @@ void init_cli(void)
  * Parameter        :
  * Return           : None
 */
-void add_cli(cli_t *new_command)
+s8_t add_cli(cli_t *new_command, u8_t num_command)
 {
-    data_list_command->next_command = new_command;
-    data_list_command = data_list_command->next_command;
-    data_list_command->next_command = NULL;
+	u8_t i;
+	s8_t result = 0;
+
+	if (num_command < 1)
+	{
+		result = -1;
+	}
+	else
+	{
+		for(i = 0; i < num_command; i++)
+		{
+			data_list_command->next_command = &new_command[i];
+			data_list_command = data_list_command->next_command;
+			data_list_command->next_command = NULL;
+		}
+	}
+
+	return result;
 }
 
 
@@ -133,18 +150,13 @@ void parse_cli(const u8_t *str_command, const u8_t len_command)
     u8_t num_of_input = 0;
     cli_t *temp_command = start_point_command;
     u8_t **input_parameter;
-    u8_t *t_str_command = NULL;
 
-    /* copy string command from input parameter into local variable */
-    t_str_command = malloc(sizeof(u8_t) * len_command);
-    memcpy(t_str_command, str_command, len_command);
-
-    temp_str = strtok(t_str_command, DELIMITER_CHARACTERS);
+    temp_str = strtok(str_command, DELIMITER_CHARACTERS);
     while(temp_command != NULL)
     {
         if (!(strcmp (temp_str, temp_command->command)))
         {
-            input_parameter = malloc(sizeof(u32_t) * temp_command->num_input_par);
+            input_parameter = (u8_t *)malloc(sizeof(u32_t) * temp_command->num_input_par);
             num_of_input = 0;
             temp_str = strtok(NULL, DELIMITER_CHARACTERS);
             while(NULL != temp_str)
@@ -174,9 +186,9 @@ void parse_cli(const u8_t *str_command, const u8_t len_command)
         {
             /* message error */
             #ifdef CLI_STAND_ALONE
-            usart_send_string("\n\rWrong number of input parameter of command !");
+            usart_send_string("Wrong number of input parameter of command !\n\r");
             #else
-            printf("\n\rWrong number of input parameter of command: %s !", temp_command->command);
+            printf("Wrong number of input parameter of command: %s !\n\r", temp_command->command);
             #endif /* CLI_STAND_ALONE */
         }
         free(input_parameter);
@@ -185,12 +197,11 @@ void parse_cli(const u8_t *str_command, const u8_t len_command)
     {
         /* don't support the command */
         #ifdef CLI_STAND_ALONE
-        usart_send_string("\n\rDon't support the command !");
+        usart_send_string("Don't support the command !\n\r");
         #else
-        printf("\n\rDon't support the command !");
+        printf("Don't support the command !\n\r");
         #endif /* CLI_STAND_ALONE */
     }
-    free(t_str_command);
 
 }
 

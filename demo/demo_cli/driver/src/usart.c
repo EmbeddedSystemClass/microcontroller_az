@@ -30,7 +30,9 @@ void usart_init(void)
     write_reg(USART_CR1, temp_reg);
 
     /* baudrate = 9600 bps; fCK = 48 MHz */
-    write_reg(USART_BRR, 0x1388u);
+    /* write_reg(USART_BRR, 0x1388); */
+    /* baudrate = 115200 bps; fCK = 48 MHz */
+    write_reg(USART_BRR, 0x1A1);
 
     /* enable usart1 */
     temp_reg = read_reg(USART_CR1, ~(1<<0));
