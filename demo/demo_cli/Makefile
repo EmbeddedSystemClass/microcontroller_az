@@ -1,11 +1,10 @@
-# sharing basic makefile
+# build system for C project
 
 PRO_DIR		:= .
-PROJ_NAME	:= stm32f0_cli_demo
-OUTPUT_PATH := $(PRO_DIR)/output
+PROJ_NAME	?= stm32f0_cli_demo
+BUILD_DIR 	:= $(PRO_DIR)/output
 
-INC_DIR		:= $(PRO_DIR)/driver/inc
-SRC_DIR 	:= $(PRO_DIR)/driver/src
+INC_DIR		:= -I$(PRO_DIR)/driver/inc -I$(PRO_DIR)/lib -I$(PRO_DIR)/lib/cli/inc -I$(PRO_DIR)/app/inc
 LINKER_FILE	:= $(PRO_DIR)/linker/stm32f0.ld
 
 COMPILER_DIR 	:= $(GCC_COMPILER)
@@ -16,58 +15,70 @@ ASM				:= $(COMPILER_DIR)/bin/$(PREFIX_GCC_COMPILER)-as
 LD				:= $(COMPILER_DIR)/bin/$(PREFIX_GCC_COMPILER)-ld
 SIZE			:= $(COMPILER_DIR)/bin/$(PREFIX_GCC_COMPILER)-size
 OBJCPY			:= $(COMPILER_DIR)/bin/$(PREFIX_GCC_COMPILER)-objcopy
+NM				:= $(COMPILER_DIR)/bin/$(PREFIX_GCC_COMPILER)-nm
 
-FILE_TO_LINK	:= $(OUTPUT_PATH)/clock.o $(OUTPUT_PATH)/gpio.o $(OUTPUT_PATH)/interrupt.o $(OUTPUT_PATH)/main.o $(OUTPUT_PATH)/startup_ARMCM0.o $(OUTPUT_PATH)/systick.o $(OUTPUT_PATH)/usart.o $(OUTPUT_PATH)/cli.o
+CC_FILE			:= $(shell find $(PRO_DIR) -name *.c)
+ASM_FILE		:= $(shell find $(PRO_DIR) -name *.s -or -name *.S)
+BUILD_FILE		:= $(CC_FILE) $(ASM_FILE)
+OBJECT_FILE		:= $(addprefix $(BUILD_DIR)/,$(addsuffix .o,$(basename $(notdir $(BUILD_FILE)))))
+DEPS 			:= $(OBJECT_FILE:.o=.d)
 
-CC_OPT			:= -march=armv6-m -mcpu=cortex-m0 -c -g -mthumb -I$(INC_DIR) -I$(PRO_DIR)/lib -I$(PRO_DIR)/lib/cli/inc -I$(PRO_DIR)/app/inc -DCLI_STAND_ALONE
+CC_OPT			:= -march=armv6-m -mcpu=cortex-m0 -c -g -mthumb $(INC_DIR) -DCLI_STAND_ALONE
 ASM_OPT			:= -march=armv6-m -mcpu=cortex-m0 -c -mthumb --defsym __STARTUP_CLEAR_BSS=1 --defsym __STACK_SIZE=0x100 --defsym __HEAP_SIZE=0x400
-LD_OPT			:= -T $(LINKER_FILE) -Map $(OUTPUT_PATH)/$(PROJ_NAME).map $(FILE_TO_LINK) -L$(COMPILER_DIR)/arm-none-eabi/lib/thumb/v6-m -lc -lnosys
+LD_OPT			:= -T $(LINKER_FILE) -Map $(BUILD_DIR)/$(PROJ_NAME).map $(OBJECT_FILE) -L $(COMPILER_DIR)/arm-none-eabi/lib/thumb/v6-m -lc -lnosys
 
 .PHONY: all
 
 all: clean build size
 
-$(OUTPUT_PATH)/clock.o: $(SRC_DIR)/clock.c
-	@echo "compile $(SRC_DIR)/clock.c file"
-	$(CC) $(CC_OPT) $(SRC_DIR)/clock.c -o $(OUTPUT_PATH)/clock.o
 
-$(OUTPUT_PATH)/gpio.o: $(SRC_DIR)/gpio.c
-	@echo "compile $(SRC_DIR)/gpio.c file"
-	$(CC) $(CC_OPT) $(SRC_DIR)/gpio.c -o $(OUTPUT_PATH)/gpio.o
+# generate object file of c file
+ifndef generate_c_rule
+define generate_c_rule
+$(addprefix $(BUILD_DIR)/,$(addsuffix .o,$(basename $(notdir $(1))))): $(1)
+	@echo Processing $$<
+	$(CC) $(CC_OPT) $$< -o $$@
+endef
+endif # generate_c_rule
 
-$(OUTPUT_PATH)/interrupt.o: $(SRC_DIR)/interrupt.c
-	@echo "compile $(SRC_DIR)/interrupt.c file"
-	$(CC) $(CC_OPT) $(SRC_DIR)/interrupt.c -o $(OUTPUT_PATH)/interrupt.o
+# generate object file of c file
+ifndef generate_asm_rule
+define generate_asm_rule
+$(addprefix $(BUILD_DIR)/,$(addsuffix .o,$(basename $(notdir $(1))))): $(1)
+	@echo Processing $$<
+	$(ASM) $(ASM_OPT) $$< -o $$@
+endef
+endif # generate_asm_rule
 
-$(OUTPUT_PATH)/main.o: $(PRO_DIR)/app/src/main.c
-	@echo "compile $(PRO_DIR)/app/src/main.c file"
-	$(CC) $(CC_OPT) $(PRO_DIR)/app/src/main.c -o $(OUTPUT_PATH)/main.o
+#generate all c and asm file of project
+$(foreach file,$(CC_FILE),$(eval $(call generate_c_rule,$(file))))
+$(foreach file,$(ASM_FILE),$(eval $(call generate_asm_rule,$(file))))
 
-$(OUTPUT_PATH)/startup_ARMCM0.o: $(PRO_DIR)/app/src/startup_ARMCM0.S
-	@echo "compile $(PRO_DIR)/app/src/startup_ARMCM0.S file"
-	$(ASM) $(ASM_OPT) $(PRO_DIR)/app/src/startup_ARMCM0.s -o $(OUTPUT_PATH)/startup_ARMCM0.o
+size: $(BUILD_DIR)/$(PROJ_NAME).elf
+	$(SIZE) $(BUILD_DIR)/$(PROJ_NAME).elf
 
-$(OUTPUT_PATH)/systick.o: $(SRC_DIR)/systick.c
-	@echo "compile $(SRC_DIR)/systick.c file"
-	$(CC) $(CC_OPT) $(SRC_DIR)/systick.c -o $(OUTPUT_PATH)/systick.o
+d_size: $(BUILD_DIR)/$(PROJ_NAME).elf
+	$(NM) --demangle --print-size --size-sort --reverse-sort -S $(BUILD_DIR)/$(PROJ_NAME).elf
 
-$(OUTPUT_PATH)/usart.o: $(SRC_DIR)/usart.c
-	@echo "compile $(SRC_DIR)/usart.c file"
-	$(CC) $(CC_OPT) $(SRC_DIR)/usart.c -o $(OUTPUT_PATH)/usart.o
+show_flag:
+	@echo $(CC_FILE)
+	@echo $(ASM_FILE)
+	@echo $(OBJECT_FILE)
+	@echo $(CC_OPT)
+	@echo $(ASM_OPT)
+	@echo $(LD_OPT)
 
-$(OUTPUT_PATH)/cli.o: $(PRO_DIR)/lib/cli/src/cli.c
-	@echo "compile $(PRO_DIR)/lib/cli/src/cli.c file"
-	$(CC) $(CC_OPT) $(PRO_DIR)/lib/cli/src/cli.c -o $(OUTPUT_PATH)/cli.o
+hex: $(BUILD_DIR)/$(PROJ_NAME).elf
+	$(OBJCPY) -O ihex $(BUILD_DIR)/$(PROJ_NAME).elf $(BUILD_DIR)/$(PROJ_NAME).hex
 
-size: $(OUTPUT_PATH)/$(PROJ_NAME).elf
-	$(SIZE) $(OUTPUT_PATH)/$(PROJ_NAME).elf
-
-hex: $(OUTPUT_PATH)/$(PROJ_NAME).elf
-	$(OBJCPY) -O ihex $(OUTPUT_PATH)/$(PROJ_NAME).elf $(OUTPUT_PATH)/$(PROJ_NAME).hex
-
-build: $(FILE_TO_LINK) $(LINKER_FILE)
-	@echo "link object files to create new binary image ($(PROJ_NAME).elf)"
-	$(LD) $(LD_OPT) -o $(OUTPUT_PATH)/$(PROJ_NAME).elf
+build: $(OBJECT_FILE)
+	@echo "Linking object files to create new binary image $(BUILD_DIR)/$(PROJ_NAME).elf"
+	$(LD) $(LD_OPT) -o $(BUILD_DIR)/$(PROJ_NAME).elf
 
 clean:
-	@rm -rf $(OUTPUT_PATH)/*
+	@rm -rf $(BUILD_DIR)
+	@mkdir -p $(BUILD_DIR)
+
+-include $(DEPS)
+
+
