@@ -30,9 +30,6 @@
 
 extern volatile unsigned char rx_data;
 
-#define LEN_INPUT_BUFFER    100
-u8_t command[LEN_INPUT_BUFFER];
-u8_t num_char;
 
 /*************************************************************************************************/
 #define NUM_LIST_PINS       4
@@ -103,16 +100,16 @@ void led_on(u8_t led_id)
     if (LD3 == led_id)
     {
         write_pin(LD3_PORT, LD3_PIN, HIGH);
-        usart_send_string("--> Turn on LED3 successfully\n\r");
+        usart_send_string("\n\r--> Turn on LED3 successfully");
     }
     else if (LD4 == led_id)
     {
         write_pin(LD4_PORT, LD4_PIN, HIGH);
-        usart_send_string("--> Turn on LED4 successfully\n\r");
+        usart_send_string("\n\r--> Turn on LED4 successfully");
     }
     else
     {
-        usart_send_string("--> Don't support the led_id\n\r");
+        usart_send_string("\n\r--> Don't support the led_id");
     }
 }
 
@@ -121,16 +118,16 @@ void led_off(u8_t led_id)
     if (LD3 == led_id)
     {
         write_pin(LD3_PORT, LD3_PIN, LOW);
-        usart_send_string("--> Turn off LED3 successfully\n\r");
+        usart_send_string("\n\r--> Turn off LED3 successfully");
     }
     else if (LD4 == led_id)
     {
         write_pin(LD4_PORT, LD4_PIN, LOW);
-        usart_send_string("--> Turn off LED4 successfully\n\r");
+        usart_send_string("\n\r--> Turn off LED4 successfully");
     }
     else
     {
-        usart_send_string("--> Don't support the led_id\n\r");
+        usart_send_string("\n\r--> Don't support the led_id");
     }
 }
 
@@ -155,7 +152,7 @@ void led_func(u8_t argc, u8_t **argv)
 
 void test_func(u8_t argc, u8_t **argv)
 {
-    usart_send_string("Call test_func\n\r");
+    usart_send_string("\n\rCall test_func");
 }
 
 void main(void)
@@ -168,33 +165,19 @@ void main(void)
     interrupt_init();
 
     delay(0xff);
-    usart_send_string("---> Command Line Interface - CLI <---\n\r");
+    usart_send_string("\n\r---> Command Line Interface - CLI <---\n\r");
 
     init_cli();
     add_cli(list_commands, sizeof(list_commands)/sizeof(cli_t));
 
-    num_char = 0;
-    memset(command, 0, LEN_INPUT_BUFFER);
+    clear_buffer_cli();
     while(1)
     {
         if(0 != rx_data)
         {
-            if (13 == rx_data) /* key code of Enter */
+            if (prepare_command_cli(rx_data))
             {
                 usart_send_string("\n\r");
-                parse_cli(command, strlen(command));
-                num_char = 0;
-                memset(command, 0, LEN_INPUT_BUFFER);
-            }
-            else if(8 == rx_data) /* key code of Backspace */
-            {
-                num_char--;
-                command[num_char] = 0;
-            }
-            else
-            {
-                command[num_char] = rx_data;
-                num_char++;
             }
             rx_data = 0;
         }

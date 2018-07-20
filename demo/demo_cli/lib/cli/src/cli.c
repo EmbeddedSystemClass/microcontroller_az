@@ -33,6 +33,8 @@
 static cli_t *data_list_command = NULL;
 static cli_t *start_point_command = NULL;
 
+static u8_t command_buffer[LEN_INPUT_BUFFER];
+static u8_t num_char;
 /* ============================== API ============================== */
 
 /*
@@ -81,7 +83,7 @@ void help(u8_t argc, u8_t **argv)
 
 
 /*
- * Name function    :
+ * Name function    : init_cli
  * Brief            :
  * Parameter        :
  * Return           : None
@@ -203,6 +205,49 @@ void parse_cli(const u8_t *str_command, const u8_t len_command)
         #endif /* CLI_STAND_ALONE */
     }
 
+}
+
+
+/*
+ * Name function    : prepare_command_cli
+ * Brief            :
+ * Parameter        :
+ * Return           : return 0 - command didn't finish; 1 - command finished
+*/
+u8_t prepare_command_cli(const u8_t character)
+{
+    u8_t result = 0;
+    if (13 == character) /* key code of Enter */
+    {
+        parse_cli(command_buffer, num_char);
+        num_char = 0;
+        memset(command_buffer, 0, LEN_INPUT_BUFFER);
+        result = 1;
+    }
+    else if(8 == character) /* key code of Backspace */
+    {
+        num_char--;
+        command_buffer[num_char] = 0;
+    }
+    else
+    {
+        command_buffer[num_char] = character;
+        num_char++;
+    }
+    return result;
+}
+
+
+/*
+ * Name function    : clear_buffer_cli
+ * Brief            :
+ * Parameter        :
+ * Return           : None
+*/
+void clear_buffer_cli(void)
+{
+    num_char = 0;
+    memset(command_buffer, 0, LEN_INPUT_BUFFER);
 }
 
 
