@@ -54,6 +54,7 @@ status_driver_t set_mode_pin(u8_t port, u8_t pin, u32_t mode_option)
 {
     u32_t temp;
     u32_t temp_reg;
+    status_driver_t result = STATUS_OK;
 
     /* mode */
     temp = mode_option & 0x03;
@@ -98,7 +99,7 @@ status_driver_t set_mode_pin(u8_t port, u8_t pin, u32_t mode_option)
     if (pin > 7)
     {
         temp_reg = read_reg(GPIO_AFRH(port), ~(0x0F << (pin*4)));
-        temp_reg |= temp << (pin*4);
+        temp_reg |= temp << ((pin-8)*4);
         write_reg(GPIO_AFRH(port), temp_reg);
     }
     else
@@ -108,6 +109,7 @@ status_driver_t set_mode_pin(u8_t port, u8_t pin, u32_t mode_option)
         write_reg(GPIO_AFRL(port), temp_reg);
     }
 
+    return result;
 }
 
 /*************************************************************************************************/
@@ -121,7 +123,7 @@ status_driver_t set_mode_pin(u8_t port, u8_t pin, u32_t mode_option)
 /*************************************************************************************************/
 status_driver_t write_pin(u8_t port, u8_t pin, u8_t value)
 {
-    status_driver_t temp = STATUS_OK;
+    status_driver_t result = STATUS_OK;
 
     if(LOW == value)
     {
@@ -134,10 +136,10 @@ status_driver_t write_pin(u8_t port, u8_t pin, u8_t value)
     else
     {
         /* Error input parameter */
-        temp = STATUS_WRONG_INPUT;
+        result = STATUS_WRONG_INPUT;
     }
 
-    return temp;
+    return result;
 }
 
 /*************************************************************************************************/
@@ -194,14 +196,18 @@ u8_t toggle_pin(u8_t port, u8_t pin)
 status_driver_t init_pin(const gpio_pin_t *list_pins, const u8_t num_pin)
 {
     u8_t i;
-    status_driver_t temp = STATUS_OK;
+    status_driver_t result = STATUS_OK;
 
     for(i = 0; i < num_pin; i++)
     {
-        set_mode_pin(list_pins->port, list_pins->pin, list_pins->mode_option);
+        result = set_mode_pin(list_pins[i].port, list_pins[i].pin, list_pins[i].mode_option);
+        if (STATUS_OK != result)
+        {
+            break;
+        }
     }
 
-    return temp;
+    return result;
 }
 
 

@@ -1,3 +1,24 @@
+/*
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2018 Anh Vo Tuan <votuananhs@gmail.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ * and associated documentation files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ * sublicense, and/or sell copies of the Software, and to permit persons to whom the Software
+ * is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies
+ * or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ * BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+ * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ */
 #include "project.h"
 #include "driver.h"
 #include "clock.h"
@@ -7,10 +28,15 @@
 #include "usart.h"
 #include "cli.h"
 
+extern volatile unsigned char rx_data;
+
+#define LEN_INPUT_BUFFER    100
+u8_t command[LEN_INPUT_BUFFER];
+u8_t num_char;
 
 /*************************************************************************************************/
 #define NUM_LIST_PINS       4
-const gpio_pin_t list_pins[NUM_LIST_PINS] =
+const gpio_pin_t init_list_pins[NUM_LIST_PINS] =
 {
     /* led 3 - PC9 */
     {
@@ -38,18 +64,22 @@ const gpio_pin_t list_pins[NUM_LIST_PINS] =
     },
 };
 
-
-#define NUM_COMMAND     1
-#define NUM_BUFFER      100
-
-cli_t list_commands[NUM_COMMAND] =
+cli_t list_commands[] =
 {
-        /* led on */
+        /* control led on/off */
         {
             "led",
             led_func,
             2,
-            "Control led on or off. \n\rSyntax: led <on/off> <led_id>",
+            "Control led on or off. \n\r\tSyntax: led <on/off> <led_id>",
+            NULL,
+        },
+        /* print message in Terminal app */
+        {
+            "test",
+            test_func,
+            0,
+            "Print call test_func() in terminal",
             NULL,
         },
 };
@@ -73,14 +103,16 @@ void led_on(u8_t led_id)
     if (LD3 == led_id)
     {
         write_pin(LD3_PORT, LD3_PIN, HIGH);
+        usart_send_string("--> Turn on LED3 successfully\n\r");
     }
     else if (LD4 == led_id)
     {
         write_pin(LD4_PORT, LD4_PIN, HIGH);
+        usart_send_string("--> Turn on LED4 successfully\n\r");
     }
     else
     {
-        /* nothing to be run here */
+        usart_send_string("--> Don't support the led_id\n\r");
     }
 }
 
@@ -89,26 +121,30 @@ void led_off(u8_t led_id)
     if (LD3 == led_id)
     {
         write_pin(LD3_PORT, LD3_PIN, LOW);
+        usart_send_string("--> Turn off LED3 successfully\n\r");
     }
     else if (LD4 == led_id)
     {
         write_pin(LD4_PORT, LD4_PIN, LOW);
+        usart_send_string("--> Turn off LED4 successfully\n\r");
     }
     else
     {
-        /* nothing to be run here */
+        usart_send_string("--> Don't support the led_id\n\r");
     }
 }
 
 void led_func(u8_t argc, u8_t **argv)
 {
+    u8_t temp = argv[1][0] - '0';
+
     if(!strcmp("on", argv[0]))
     {
-        led_on(argv[1] - '0');
+        led_on(temp);
     }
     else if(!strcmp("off", argv[0]))
     {
-        led_off(argv[1] - '0');
+        led_off(temp);
     }
     else
     {
@@ -117,37 +153,51 @@ void led_func(u8_t argc, u8_t **argv)
     }
 }
 
+void test_func(u8_t argc, u8_t **argv)
+{
+    usart_send_string("Call test_func\n\r");
+}
+
 void main(void)
 {
-    u8_t i;
-    u8_t t_command_led_on[] = "led on 0";
-    u8_t t_command_led_off[] = "led off 0";
-
     system_init(PREDIV_1, PLL_MUL_12, PLL_SCR_HSI, PREDIV_1, SYSCLKSOURCE_PLLCLK, APB1_HCLK_1);
     enabled_clock();
-    init_pin(list_pins, NUM_LIST_PINS);
+    init_pin(init_list_pins, NUM_LIST_PINS);
     usart_init();
     systick_init();
-
     interrupt_init();
 
+    delay(0xff);
+    usart_send_string("---> Command Line Interface - CLI <---\n\r");
+
     init_cli();
+    add_cli(list_commands, sizeof(list_commands)/sizeof(cli_t));
 
-    for(i = 0; i < NUM_COMMAND; i++)
-    {
-        add_cli(&list_commands[i]);
-    }
-
-    #if 1
+    num_char = 0;
+    memset(command, 0, LEN_INPUT_BUFFER);
     while(1)
     {
-        parse_cli(t_command_led_on);
-        delay_ms_systick(500);
-        parse_cli(t_command_led_off);
-        delay_ms_systick(500);
+        if(0 != rx_data)
+        {
+            if (13 == rx_data) /* key code of Enter */
+            {
+                usart_send_string("\n\r");
+                parse_cli(command, strlen(command));
+                num_char = 0;
+                memset(command, 0, LEN_INPUT_BUFFER);
+            }
+            else if(8 == rx_data) /* key code of Backspace */
+            {
+                num_char--;
+                command[num_char] = 0;
+            }
+            else
+            {
+                command[num_char] = rx_data;
+                num_char++;
+            }
+            rx_data = 0;
+        }
     }
-    #else
-        start_systick_test(100);
-    #endif
 }
 
