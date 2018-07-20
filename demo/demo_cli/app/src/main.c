@@ -30,9 +30,6 @@
 
 extern volatile unsigned char rx_data;
 
-#define LEN_INPUT_BUFFER    100
-u8_t command[LEN_INPUT_BUFFER];
-u8_t num_char;
 
 /*************************************************************************************************/
 #define NUM_LIST_PINS       4
@@ -173,29 +170,13 @@ void main(void)
     init_cli();
     add_cli(list_commands, sizeof(list_commands)/sizeof(cli_t));
 
-    num_char = 0;
-    memset(command, 0, LEN_INPUT_BUFFER);
+    clear_buffer_cli();
     while(1)
     {
         if(0 != rx_data)
         {
-            if (13 == rx_data) /* key code of Enter */
-            {
-                usart_send_string("\n\r");
-                parse_cli(command, strlen(command));
-                num_char = 0;
-                memset(command, 0, LEN_INPUT_BUFFER);
-            }
-            else if(8 == rx_data) /* key code of Backspace */
-            {
-                num_char--;
-                command[num_char] = 0;
-            }
-            else
-            {
-                command[num_char] = rx_data;
-                num_char++;
-            }
+            usart_send_string("\n\r");
+            prepare_command_cli(rx_data);
             rx_data = 0;
         }
     }
