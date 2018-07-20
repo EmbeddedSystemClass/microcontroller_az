@@ -212,15 +212,17 @@ void parse_cli(const u8_t *str_command, const u8_t len_command)
  * Name function    : prepare_command_cli
  * Brief            :
  * Parameter        :
- * Return           : None
+ * Return           : return 0 - command didn't finish; 1 - command finished
 */
-void prepare_command_cli(const u8_t character)
+u8_t prepare_command_cli(const u8_t character)
 {
+    u8_t result = 0;
     if (13 == character) /* key code of Enter */
     {
         parse_cli(command_buffer, num_char);
         num_char = 0;
         memset(command_buffer, 0, LEN_INPUT_BUFFER);
+        result = 1;
     }
     else if(8 == character) /* key code of Backspace */
     {
@@ -232,6 +234,7 @@ void prepare_command_cli(const u8_t character)
         command_buffer[num_char] = character;
         num_char++;
     }
+    return result;
 }
 
 
