@@ -83,7 +83,7 @@ void help(u8_t argc, u8_t **argv)
 
 
 /*
- * Name function    :
+ * Name function    : init_cli
  * Brief            :
  * Parameter        :
  * Return           : None
