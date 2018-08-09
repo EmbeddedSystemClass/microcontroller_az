@@ -33,10 +33,10 @@
   *         apb1_div: hệ số chia clock cho APB1 prescaler
   * @retval None
   */
-void system_init(u32_t hsi_prediv, u32_t pullmux, u32_t pllsrc, u32_t ahb_div, u32_t system_source, u32_t apb1_div)
+void system_init(uint32_t hsi_prediv, uint32_t pullmux, uint32_t pllsrc, uint32_t ahb_div, uint32_t system_source, uint32_t apb1_div)
 {
-    u32_t temp_reg;
-    volatile u32_t timeout;
+    uint32_t temp_reg;
+    volatile uint32_t timeout;
 
     /* Disable all interrupts */
     write_reg(RCC_CIR, 0x00000000U);

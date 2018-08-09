@@ -50,10 +50,10 @@
  *                                  - pull up/down
  * Return       :   None
 /*************************************************************************************************/
-status_driver_t set_mode_pin(u8_t port, u8_t pin, u32_t mode_option)
+status_driver_t set_mode_pin(u8_t port, u8_t pin, uint32_t mode_option)
 {
-    u32_t temp;
-    u32_t temp_reg;
+    uint32_t temp;
+    uint32_t temp_reg;
     status_driver_t result = STATUS_OK;
 
     /* mode */
@@ -152,7 +152,7 @@ status_driver_t write_pin(u8_t port, u8_t pin, u8_t value)
 /*************************************************************************************************/
 u8_t read_pin(u8_t port, u8_t pin)
 {
-    u32_t temp;
+    uint32_t temp;
 
     temp = read_reg(GPIO_IDR(port), 1 << pin);
     temp = temp >> pin;
@@ -170,7 +170,7 @@ u8_t read_pin(u8_t port, u8_t pin)
 /*************************************************************************************************/
 u8_t toggle_pin(u8_t port, u8_t pin)
 {
-    u32_t temp;
+    uint32_t temp;
 
     temp = read_reg(GPIO_ODR(port), 1 << pin);
     temp = temp >> pin;

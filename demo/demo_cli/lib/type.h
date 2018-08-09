@@ -23,7 +23,7 @@
 #ifndef __TYPE_H__
 #define __TYPE_H__
 
-typedef unsigned int            u32_t;
+typedef unsigned int            uint32_t;
 typedef signed int              s32_t;
 
 typedef unsigned short          u16_t;

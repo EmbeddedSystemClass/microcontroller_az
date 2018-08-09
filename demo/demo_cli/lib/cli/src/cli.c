@@ -158,7 +158,7 @@ void parse_cli(const u8_t *str_command, const u8_t len_command)
     {
         if (!(strcmp (temp_str, temp_command->command)))
         {
-            input_parameter = (u8_t *)malloc(sizeof(u32_t) * temp_command->num_input_par);
+            input_parameter = (u8_t *)malloc(sizeof(uint32_t) * temp_command->num_input_par);
             num_of_input = 0;
             temp_str = strtok(NULL, DELIMITER_CHARACTERS);
             while(NULL != temp_str)

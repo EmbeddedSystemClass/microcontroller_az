@@ -46,10 +46,10 @@ typedef struct
 {
     const u8_t port;
     const u8_t pin;
-    const u32_t mode_option;
+    const uint32_t mode_option;
 } gpio_pin_t;
 
-extern status_driver_t set_mode_pin(u8_t port, u8_t pin, u32_t mode_option);
+extern status_driver_t set_mode_pin(u8_t port, u8_t pin, uint32_t mode_option);
 extern status_driver_t write_pin(u8_t port, u8_t pin, u8_t value);
 extern u8_t read_pin(u8_t port, u8_t pin);
 extern u8_t toggle_pin(u8_t port, u8_t pin);
