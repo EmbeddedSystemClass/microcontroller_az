@@ -23,9 +23,10 @@
 #ifndef __TYPE_H__
 #define __TYPE_H__
 
-#include "_stdint.h"
 
-#if 0
+#if 1
+#include "_stdint.h"
+#else
 typedef unsigned int            uint32_t;
 typedef signed int              sint32_t;
 

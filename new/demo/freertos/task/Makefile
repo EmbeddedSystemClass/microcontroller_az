@@ -22,7 +22,7 @@
 # build system for C project
 
 
-PRO_DIR				:= /Users/anhvt6/git/microcontroller_az/new
+PRO_DIR				:= ~/git/microcontroller_az/new
 BOARD_NAME			:= stm32f051r8
 PROJ_NAME			:= $(BOARD_NAME)_freertos_task
 
@@ -54,6 +54,7 @@ INC_DIRS			+= $(HAL_DIR)/stm32/inc
 INC_DIRS			+= $(LIB_DIR)/FreeRTOSv10.0.1/FreeRTOS/Source/include
 INC_DIRS			+= $(LIB_DIR)/FreeRTOSv10.0.1/FreeRTOS/Source/portable/GCC/ARM_CM0
 INC_DIRS			+= $(BOARD_DIR)/inc
+INC_DIRS			+= $(COMPILER_DIR)/arm-none-eabi/include/sys
 
 # linker file
 LINKER_FILE			:= $(BOARD_DIR)/linker/stm32f0.ld
@@ -61,15 +62,13 @@ LINKER_FILE			:= $(BOARD_DIR)/linker/stm32f0.ld
 # select heap file for FreeRTOS
 CC_FILES			+= $(FREERTOS_HEAP_DIR)/heap_2.c
 
-# compiler option
-
+# setting compiler option
 CC_OPT			= -march=armv6-m -mcpu=cortex-m0 -c -g -mthumb $(INC_DIR) -DCLI_STAND_ALONE
 ASM_OPT			= -march=armv6-m -mcpu=cortex-m0 -c -mthumb --defsym __STARTUP_CLEAR_BSS=1 --defsym __STACK_SIZE=0x300 --defsym __HEAP_SIZE=0x800
 LD_OPT			= -T $(LINKER_FILE) -Map $(BUILD_DIR)/$(PROJ_NAME).map $(OBJECT_FILE) -L $(COMPILER_DIR)/arm-none-eabi/lib/thumb/v6-m -lc_nano -lnosys -L $(COMPILER_DIR)/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m -lgcc
 
 
-
 # include build system to use common taget rules:
 BUILD_SYSTEM		:= $(PRO_DIR)/build_system
-include $(BUILD_SYSTEM)/common.mk
+include	$(BUILD_SYSTEM)/common.mk
 

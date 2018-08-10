@@ -26,7 +26,6 @@
 #include "interrupt.h"
 #include "systick.h"
 #include "usart.h"
-#include "cli.h"
 #include "FreeRTOSConfig.h"
 #include "FreeRTOS.h"
 #include "task.h"
@@ -64,26 +63,6 @@ const gpio_pin_t init_list_pins[NUM_LIST_PINS] =
         10,
         GPIO_MODE_OPTION_ALT | GPIO_MODE_OPTION_AF1,
     },
-};
-
-cli_t list_commands[] =
-{
-        /* control led on/off */
-        {
-            "led",
-            led_func,
-            2,
-            "Control led on or off. \n\r\tSyntax: led <on/off> <led_id>",
-            NULL,
-        },
-        /* print message in Terminal app */
-        {
-            "test",
-            test_func,
-            0,
-            "Print call test_func() in terminal",
-            NULL,
-        },
 };
 
 /*************************************************************************************************/

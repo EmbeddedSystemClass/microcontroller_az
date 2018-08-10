@@ -30,14 +30,14 @@ COMPILER_DIR 	:= $(GCC_COMPILER)
 #ASM_DIRS =
 
 # list of C language files:
-CC_FILES 		+= $(foreach dir,$(CC_DIRS),$(wildcard $(dir)/*.c))
+CC_FILES 		+= $(foreach __dir,$(CC_DIRS),$(wildcard $(__dir)/*.c))
 
 # list of ASM language files:
-ASM_FILES 		+= $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
-ASM_FILES 		+= $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.S))
+ASM_FILES 		+= $(foreach __dir,$(ASM_DIRS),$(wildcard $(__dir)/*.s))
+ASM_FILES 		+= $(foreach __dir,$(ASM_DIRS),$(wildcard $(__dir)/*.S))
 
 # include folder
-INC_DIR 		+= $(foreach dir,$(INC_DIRS),-I$(dir))
+INC_DIR 		= $(foreach __dir,$(INC_DIRS),$(addprefix -I , $(__dir)))
 
 PREFIX_GCC_COMPILER	:= arm-none-eabi
 CC				:= $(COMPILER_DIR)/bin/$(PREFIX_GCC_COMPILER)-gcc
@@ -53,7 +53,7 @@ DEPS 			= $(OBJECT_FILE:.o=.d)
 
 .PHONY: all
 
-all: clean build size
+all: clean build hex size
 
 # generate object file of c file
 ifndef generate_c_rule
