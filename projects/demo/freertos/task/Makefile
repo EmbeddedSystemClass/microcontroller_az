@@ -23,7 +23,10 @@
 
 
 PRO_DIR				:= ../../../../projects
-BOARD_NAME			:= stm32f051r8
+
+# board support
+board 				= stm32f051r8
+BOARD_NAME			:= $(board)
 PROJ_NAME			:= task
 
 
@@ -58,17 +61,16 @@ INC_DIRS			+= $(LIB_DIR)/common/inc
 INC_DIRS			+= $(BOARD_DIR)/inc
 INC_DIRS			+= $(COMPILER_DIR)/arm-none-eabi/include/sys
 
-# linker file
-LINKER_FILE			:= $(BOARD_DIR)/linker/stm32f0.ld
-
 # select heap file for FreeRTOS
 CC_FILES			+= $(FREERTOS_HEAP_DIR)/heap_2.c
 
 # setting compiler option
-CC_OPT			= -march=armv6-m -mcpu=cortex-m0 -c -g -mthumb $(INC_DIR) -DCLI_STAND_ALONE -D__STDINT_GCC__
-ASM_OPT			= -march=armv6-m -mcpu=cortex-m0 -c -mthumb --defsym __STARTUP_CLEAR_BSS=1 --defsym __STACK_SIZE=0x300 --defsym __HEAP_SIZE=0x800
-LD_OPT			= -T $(LINKER_FILE) -Map $(BUILD_DIR)/bin/$(PROJ_NAME).map $(OBJECT_FILE) -L $(COMPILER_DIR)/arm-none-eabi/lib/thumb/v6-m -lc_nano -lnosys -L $(COMPILER_DIR)/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m -lgcc
+CC_OPT				+= -D__STDINT_GCC__
+ASM_OPT				+=
+LD_OPT				+=
 
+# include setting board to build project
+include $(BOARD_DIR)/board.mk
 
 # include build system to use common taget rules:
 BUILD_SYSTEM		:= $(PRO_DIR)/build_system

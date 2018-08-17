@@ -23,11 +23,13 @@
 
 COMPILER_DIR 	:= $(GCC_COMPILER)
 
-# list folders contains C language files
-#CC_DIRS =
+# board support
+board 			:= stm32f051r8
+list_board		:= stm32f051r8 stm32f103c8
 
-# list folders contains ASM language files
-#ASM_DIRS =
+ifeq ($(filter $(board),$(list_board)),)
+$(error Undefined board selection '$(board)', select one from list: $(list_board))
+endif
 
 # list of C language files:
 CC_FILES 		+= $(foreach __dir,$(CC_DIRS),$(wildcard $(__dir)/*.c))
