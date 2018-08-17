@@ -27,6 +27,7 @@
 #include "systick.h"
 #include "usart.h"
 #include "cli.h"
+#include "board.h"
 
 extern volatile uint8_t rx_data;
 
@@ -137,66 +138,6 @@ void USART1_IRQHandler(void)
 }
 
 /*************************************************************************************************/
-
-void led_on(uint8_t led_id)
-{
-    if (LD3 == led_id)
-    {
-        write_pin(LD3_PORT, LD3_PIN, HIGH);
-        usart_send_string("\n\r--> Turn on LED3 successfully");
-    }
-    else if (LD4 == led_id)
-    {
-        write_pin(LD4_PORT, LD4_PIN, HIGH);
-        usart_send_string("\n\r--> Turn on LED4 successfully");
-    }
-    else
-    {
-        usart_send_string("\n\r--> Don't support the led_id");
-    }
-}
-
-void led_off(uint8_t led_id)
-{
-    if (LD3 == led_id)
-    {
-        write_pin(LD3_PORT, LD3_PIN, LOW);
-        usart_send_string("\n\r--> Turn off LED3 successfully");
-    }
-    else if (LD4 == led_id)
-    {
-        write_pin(LD4_PORT, LD4_PIN, LOW);
-        usart_send_string("\n\r--> Turn off LED4 successfully");
-    }
-    else
-    {
-        usart_send_string("\n\r--> Don't support the led_id");
-    }
-}
-
-void led_func(uint8_t argc, uint8_t **argv)
-{
-    uint8_t temp = argv[1][0] - '0';
-
-    if(!strcmp("on", argv[0]))
-    {
-        led_on(temp);
-    }
-    else if(!strcmp("off", argv[0]))
-    {
-        led_off(temp);
-    }
-    else
-    {
-        /* nothing to be run here */
-        /* printf("\n\rDon't support the input parameter !"); */
-    }
-}
-
-void test_func(uint8_t argc, uint8_t **argv)
-{
-    usart_send_string("\n\rCall test_func");
-}
 
 void main(void)
 {

@@ -19,16 +19,32 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
-#ifndef __CONFIG_PROJECT_H__
-#define __CONFIG_PROJECT_H__
+#ifndef __BOARD_H__
+#define __BOARD_H__
+
+
+#include "type.h"
+#include "hw_platform.h"
 
 
 
-#define HAL_CLOCK_ENABLED           1
-#define HAL_GPIO_ENABLED            1
-#define HAL_INTERRUPT_ENABLED       1
-#define HAL_SYSTICK_ENABLED         1
-#define HAL_UART_ENABLED            1
+/* Led LD3 - PC9 */
+#define LD3                     0
+#define LD3_PORT                PORT_C
+#define LD3_PIN                 9
+/* Led LD4 - PC8 */
+#define LD4                     1
+#define LD4_PORT                PORT_C
+#define LD4_PIN                 8
+
+/* user button (B1) - PA0 */
+#define USER_BUTTON             0
+
+extern void led_on(uint8_t led_id);
+extern void led_off(uint8_t led_id);
+extern void led_func(uint8_t argc, uint8_t **argv);
+extern void test_func(uint8_t argc, uint8_t **argv);
 
 
-#endif
+#endif /* __BOARD_H__ */
+

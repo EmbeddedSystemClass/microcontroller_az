@@ -24,11 +24,11 @@
 
 
 
-#define HAL_CLOCK_ENABLED           0
-#define HAL_GPIO_ENABLED            0
-// #define HAL_INTERRUPT_ENABLED       0
-// #define HAL_SYSTICK_ENABLED         0
-// #define HAL_UART_ENABLED            0
+#define HAL_CLOCK_ENABLED           1
+#define HAL_GPIO_ENABLED            1
+// #define HAL_INTERRUPT_ENABLED       1
+// #define HAL_SYSTICK_ENABLED         1
+// #define HAL_UART_ENABLED            1
 
 
 #endif
